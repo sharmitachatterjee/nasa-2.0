@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Your dashboard | ABNF</title>
+    <link rel="stylesheet" href="css/auth.css" />
+    <script type="module" src="js/auth.js"></script>
+  </head>
+  <body data-page="dashboard">
+    <header class="site-header">
+      <a class="brand" href="/">ABNF<span>.</span></a>
+      <nav class="header-actions" aria-label="Account">
+        <a class="button button-quiet" href="/">Home</a>
+        <button class="button button-quiet" type="button" data-logout>Log out</button>
+      </nav>
+    </header>
+
+    <main class="dashboard">
+      <p class="eyebrow">MISSION CONTROL</p>
+      <h1>Welcome, <span data-display-name>Explorer</span>.</h1>
+      <p class="hero-copy">You’re signed in and ready to explore.</p>
+      <section class="account-card" aria-labelledby="account-heading">
+        <h2 id="account-heading">Your account</h2>
+        <p class="account-label">Email</p>
+        <p class="account-value" data-account-email>Loading…</p>
+        <p class="account-label">Member since</p>
+        <p class="account-value" data-member-since>Loading…</p>
+      </section>
+      <p class="status-message" role="status" aria-live="polite" data-status></p>
+    </main>
+  </body>
+</html>

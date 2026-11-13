@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Explore the stories of space missions that time almost forgot."
+    />
+    <title>Abandoned but Not Forgotten | Space Mission Stories</title>
+    <link rel="stylesheet" href="css/auth.css" />
+    <script type="module" src="js/auth.js"></script>
+  </head>
+  <body data-page="home">
+    <header class="site-header">
+      <a class="brand" href="/">ABNF<span>.</span></a>
+      <nav class="header-actions" aria-label="Account">
+        <a class="button button-quiet" href="login.html" data-signed-out>Log in</a>
+        <a class="button button-primary" href="login.html#signup" data-signed-out>
+          Create account
+        </a>
+        <a class="button button-primary" href="dashboard.html" data-signed-in hidden>
+          My dashboard
+        </a>
+        <button class="button button-quiet" type="button" data-logout data-signed-in hidden>
+          Log out
+        </button>
+      </nav>
+    </header>
+
+    <main class="hero">
+      <p class="eyebrow">THE STORIES BEYOND THE HEADLINES</p>
+      <h1>Some missions end.<br /><span>Their stories don’t.</span></h1>
+      <p class="hero-copy">
+        Discover the spacecraft, rovers, and bold ideas left behind in humanity’s
+        exploration of space.
+      </p>
+      <div class="hero-actions">
+        <a class="button button-primary button-large" href="login.html#signup" data-signed-out>
+          Start exploring
+        </a>
+        <a class="button button-primary button-large" href="dashboard.html" data-signed-in hidden>
+          Go to your dashboard
+        </a>
+        <a class="button button-quiet button-large" href="login.html" data-signed-out>
+          Log in
+        </a>
+      </div>
+      <p class="status-message" role="status" aria-live="polite" data-status></p>
+    </main>
+    <footer class="site-footer">
+      <span>ABNF · A home for forgotten space stories</span>
+      <span>Explore. Remember. Wonder.</span>
+    </footer>
+  </body>
+</html>
