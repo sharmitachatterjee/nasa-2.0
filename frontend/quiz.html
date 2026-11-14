@@ -13,6 +13,7 @@
     <script defer src="js/quiz.js"></script>
   </head>
   <body data-page="quiz">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <header class="site-header">
       <a class="brand" href="/">ABNF<span>.</span></a>
       <nav class="header-actions" aria-label="Main navigation">
@@ -23,7 +24,7 @@
       </nav>
     </header>
 
-    <main class="quiz-page">
+    <main class="quiz-page" id="main-content" tabindex="-1">
       <section class="quiz-intro">
         <p class="eyebrow">EXPLORER ACADEMY</p>
         <h1>Ready for <span>launch?</span></h1>
@@ -95,7 +96,7 @@
         <section class="quiz-results" data-quiz-results hidden aria-labelledby="results-title">
           <div class="result-heading">
             <p class="eyebrow">MISSION COMPLETE</p>
-            <h2 id="results-title" data-results-title>Nice work, Explorer.</h2>
+            <h2 id="results-title" data-results-title tabindex="-1">Nice work, Explorer.</h2>
             <p data-results-copy></p>
           </div>
           <div class="explorer-card-frame">

@@ -276,6 +276,7 @@ function finishQuiz() {
     "aria-label",
     `${selectedCallsign}, ${rank.title}, score ${score} out of ${TOTAL_QUESTIONS}.`,
   );
+  document.querySelector("[data-results-title]").focus();
 }
 
 async function downloadCard() {

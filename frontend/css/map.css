@@ -131,6 +131,15 @@
   background: #b7a4ff;
 }
 
+.legend-dot.status-historic {
+  border-radius: 2px;
+}
+
+.legend-dot.status-planned {
+  border-radius: 2px;
+  transform: rotate(45deg) scale(0.82);
+}
+
 .map-attribution {
   margin: 0;
   padding: 0 1rem 0.9rem;
@@ -348,6 +357,12 @@
 .planet-marker--planned {
   color: #b7a4ff;
   background: #b7a4ff;
+  border-radius: 2px;
+  transform: rotate(45deg) scale(0.82);
+}
+
+.planet-marker--historic {
+  border-radius: 2px;
 }
 
 @media (max-width: 900px) {

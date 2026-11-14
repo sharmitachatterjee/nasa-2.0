@@ -8,6 +8,7 @@
     <script type="module" src="js/auth.js"></script>
   </head>
   <body data-page="dashboard">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <header class="site-header">
       <a class="brand" href="/">ABNF<span>.</span></a>
       <nav class="header-actions" aria-label="Account">
@@ -17,7 +18,7 @@
       </nav>
     </header>
 
-    <main class="dashboard">
+    <main class="dashboard" id="main-content" tabindex="-1">
       <p class="eyebrow">MISSION CONTROL</p>
       <h1>Welcome, <span data-display-name>Explorer</span>.</h1>
       <p class="hero-copy">You’re signed in and ready to explore.</p>

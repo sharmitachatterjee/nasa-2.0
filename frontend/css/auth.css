@@ -321,3 +321,141 @@ h1 {
     font-size: 0.78rem;
   }
 }
+
+.skip-link {
+  position: fixed;
+  z-index: 10000;
+  top: 0.75rem;
+  left: 0.75rem;
+  padding: 0.75rem 1rem;
+  transform: translateY(calc(-100% - 1rem));
+  border: 2px solid currentColor;
+  border-radius: 0.5rem;
+  color: #080b16;
+  background: #f3f5ff;
+  font-weight: 750;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+:focus,
+:focus-visible,
+.auth-form input:focus,
+.callsign-input:focus {
+  outline: 3px solid #e0d7ff;
+  outline-offset: 3px;
+}
+
+@media (prefers-contrast: more) {
+  :root {
+    --muted: #d7dced;
+    --accent: #d2c5ff;
+    --line: rgba(243, 245, 255, 0.58);
+    --panel: #101426;
+  }
+
+  .story-disclaimer,
+  .story-choice-meta,
+  .story-kicker,
+  .story-state,
+  .story-index-heading > span,
+  .map-caption,
+  .map-status,
+  .site-panel-hint,
+  .map-attribution,
+  .site-list-status,
+  .quiz-category,
+  .quiz-question-count,
+  .quiz-play-footer p {
+    color: #e4e8f4;
+  }
+
+  .button,
+  .tab-button,
+  .planet-button,
+  .story-choice,
+  .site-list-button,
+  .answer-option {
+    border-color: #e4e8f4;
+  }
+
+  :focus,
+  :focus-visible,
+  .auth-form input:focus,
+  .callsign-input:focus {
+    outline-color: #fff;
+    outline-width: 4px;
+  }
+}
+
+@media (forced-colors: active) {
+  body {
+    color: CanvasText;
+    background: Canvas;
+  }
+
+  a {
+    color: LinkText;
+  }
+
+  .button,
+  .tab-button,
+  .planet-button,
+  .story-choice,
+  .site-list-button,
+  .answer-option {
+    border: 1px solid ButtonText;
+    color: ButtonText;
+    background: ButtonFace;
+  }
+
+  .button-primary {
+    color: ButtonText;
+    background: ButtonFace;
+  }
+
+  .auth-form input,
+  .callsign-input {
+    border: 1px solid FieldText;
+    color: FieldText;
+    background: Field;
+  }
+
+  .story-index,
+  .story-panel,
+  .map-main,
+  .site-panel,
+  .quiz-shell,
+  .auth-card,
+  .account-card,
+  .answer-feedback {
+    border: 1px solid CanvasText;
+    background: Canvas;
+  }
+
+  .planet-marker {
+    border-color: CanvasText;
+    background: Highlight !important;
+    box-shadow: none;
+  }
+
+  :focus,
+  :focus-visible,
+  .auth-form input:focus,
+  .callsign-input:focus {
+    outline-color: Highlight;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

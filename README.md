@@ -76,3 +76,12 @@ storage. Each result creates a downloadable PNG Explorer Card; the share link
 opens a card preview for friends. Callsigns are optional and should be
 space-themed rather than real names. Questions and NASA sources are in
 `frontend/data/quiz.json`; no external API key or `.env` setting is required.
+
+## Accessibility
+
+The main pages include a keyboard-accessible skip link, visible keyboard focus,
+and controls operable with standard keyboard navigation. The site honors system
+reduced-motion and increased-contrast preferences, and supports operating
+system forced-colors modes. Mission markers also use distinct shapes as well as
+colors to indicate status. These accessibility features need no API key or
+`.env` setting.
