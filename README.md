@@ -40,6 +40,26 @@ Open `http://localhost:3000`. The backend serves the static frontend and a small
 key to the browser. The `.env` file is ignored by Git; do not put a Supabase
 service-role key in it for this frontend authentication flow.
 
+### Deploy to Vercel
+
+Import the repository into Vercel with the repository root as the project root.
+The included `vercel.json` publishes `frontend/` as the static site and deploys
+`api/config.js` and `api/voyager.js` as serverless functions. Do not set
+`backend/` as the Vercel project root.
+
+In the Vercel project’s **Settings → Environment Variables**, set
+`SUPABASE_URL` and `SUPABASE_ANON_KEY` for the environments you deploy
+(Production, and Preview if needed). These are the Supabase project URL and
+public publishable/anon key; never use the service-role secret. Vercel does not
+read your local `backend/.env`, and `NASA_API_KEY` is not used by this app.
+Redeploy after changing environment variables.
+
+In Supabase **Authentication → URL Configuration**, set the Site URL to your
+production Vercel URL and add that URL with `/dashboard.html` to the allowed
+redirect URLs. Add your Vercel Preview URL patterns there too if you test
+authentication on preview deployments. Keep the existing localhost URLs for
+local development.
+
 ## Planetary map
 
 Open `http://localhost:3000/explore.html` to explore mission sites on the Moon
