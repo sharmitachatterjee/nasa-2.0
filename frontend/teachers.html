@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Free classroom STEM curriculum, discussion prompts, student calculation worksheets, and printable mission certificates." />
+    <title>Teacher & Educator Pack | STEM Space Curriculum | ABNF</title>
+    <link rel="stylesheet" href="css/auth.css" />
+    <link rel="stylesheet" href="css/tools.css" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <script defer src="js/i18n.js"></script>
+    <script defer src="js/pwa.js"></script>
+  </head>
+  <body data-page="teachers">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-header no-print">
+      <a class="brand" href="/">ABNF<span>.</span></a>
+      <nav class="header-actions" aria-label="Navigation">
+        <a class="button button-quiet" href="/" data-i18n="nav_home">Home</a>
+        <a class="button button-quiet" href="explore.html" data-i18n="nav_explore">Explore</a>
+        <a class="button button-quiet" href="mission.html" data-i18n="nav_stories">Stories</a>
+        <a class="button button-quiet" href="quiz.html" data-i18n="nav_quiz">Quiz</a>
+        <a class="button button-quiet" href="signal.html" data-i18n="nav_signal">Signal Delay</a>
+        <a class="button button-primary" href="teachers.html" data-i18n="nav_teachers" aria-current="page">Teacher Pack</a>
+        <button class="button button-quiet" type="button" data-pwa-install hidden data-i18n="nav_install">📱 Install App</button>
+      </nav>
+    </header>
+
+    <main class="tool-page-container" id="main-content" tabindex="-1">
+      <nav class="tool-subnav no-print" aria-label="Tool Navigation">
+        <a class="tool-subnav-link" href="signal.html" data-i18n="nav_signal">📡 Signal Delay</a>
+        <a class="tool-subnav-link" href="then-now.html" data-i18n="nav_then_now">⏱️ Then & Now</a>
+        <a class="tool-subnav-link" href="ask.html" data-i18n="nav_ask">🤖 Ask the Machine</a>
+        <a class="tool-subnav-link" href="lander.html" data-i18n="nav_lander">🚀 Lander Game</a>
+        <a class="tool-subnav-link" href="farewell.html" data-i18n="nav_farewell">💌 Farewell Wall</a>
+        <a class="tool-subnav-link" href="ar.html" data-i18n="nav_ar">🛰️ AR Hologram</a>
+        <a class="tool-subnav-link is-active" href="teachers.html" data-i18n="nav_teachers">📚 Teacher Pack</a>
+      </nav>
+
+      <div class="tool-header">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <p class="eyebrow" data-i18n="hero_eyebrow">CLASSROOM STEM & ASTRONOMY HUB</p>
+            <h1>Teacher & <span>Educator Pack</span></h1>
+            <p>
+              Standards-aligned curriculum modules, physics calculation worksheets, classroom discussion guides, and printable mission achievement certificates for middle and high school classrooms.
+            </p>
+          </div>
+          <button class="button button-primary no-print" onclick="window.print()" type="button">
+            🖨️ Print / Save as PDF
+          </button>
+        </div>
+      </div>
+
+      <!-- Printable Student Certificate Generator -->
+      <div class="signal-control-card" style="margin-bottom: 2.5rem;">
+        <h2 style="font-size: 1.25rem; margin-top: 0;">Explorer Certification Generator</h2>
+        <p style="font-size: 0.85rem; color: var(--muted); margin-bottom: 1rem;">
+          Generate a custom mission certificate for your students upon completing the explorer stories and physics quiz.
+        </p>
+
+        <div class="no-print" style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1rem;">
+          <input
+            id="certStudentName"
+            type="text"
+            placeholder="Enter Student Name (e.g., Maya Lin)"
+            style="flex: 1; min-width: 200px; background: rgba(255,255,255,0.06); border: 1px solid var(--line); border-radius: 0.6rem; padding: 0.6rem; color: #fff;"
+          />
+          <button
+            class="button button-primary"
+            type="button"
+            onclick="document.getElementById('certDisplay').textContent = document.getElementById('certStudentName').value || 'CADET EXPLORER';"
+          >
+            Update Certificate
+          </button>
+        </div>
+
+        <div class="badge-printable" style="width: 100%; justify-content: space-between; flex-wrap: wrap;">
+          <div>
+            <div class="lesson-badge">OFFICIAL COMMENDATION · NASA ARCHIVE EXPLORER</div>
+            <h3 style="font-size: 1.6rem; margin: 0.35rem 0;" id="certDisplay">CADET EXPLORER</h3>
+            <p style="font-size: 0.85rem; color: var(--muted); margin: 0;">
+              For demonstrating mastery of orbital physics, planetary geology, and honoring the legacy of robotic space pioneers.
+            </p>
+          </div>
+          <div style="text-align: right;">
+            <div style="font-size: 1.8rem;">🚀 ⭐ 🪐</div>
+            <div style="font-size: 0.75rem; color: var(--muted);">ABNF Mission Authority</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Curriculum Modules -->
+      <div class="curriculum-grid">
+        <!-- Module 1 -->
+        <div class="lesson-card">
+          <div class="lesson-badge">MODULE 1 · PHYSICS</div>
+          <h2 style="font-size: 1.25rem; margin: 0.4rem 0;">The Physics of Light Delay</h2>
+          <p style="font-size: 0.85rem; color: var(--muted); line-height: 1.5;">
+            <strong>Core Concept:</strong> Finite speed of light ($c = 299,792\text{ km/s}$) and deep-space latency.
+          </p>
+          <div style="background: rgba(8, 11, 22, 0.6); padding: 0.75rem; border-radius: 0.5rem; margin: 0.85rem 0; font-size: 0.82rem; line-height: 1.5;">
+            <strong>Student Problem:</strong> When Mars is closest to Earth (56 million km), calculate how many minutes a radio command takes to reach Opportunity. If a rover is heading toward a cliff at 5 cm/s, explain why Earth controllers cannot steer it with a live joystick.
+          </div>
+          <p style="font-size: 0.8rem; color: var(--accent);">
+            → Recommended Tool: <a href="signal.html" style="text-decoration: underline;">Signal Delay Simulator</a>
+          </p>
+        </div>
+
+        <!-- Module 2 -->
+        <div class="lesson-card">
+          <div class="lesson-badge">MODULE 2 · GEOLOGY & ASTROBIOLOGY</div>
+          <h2 style="font-size: 1.25rem; margin: 0.4rem 0;">Planetary Geology & Ancient Water</h2>
+          <p style="font-size: 0.85rem; color: var(--muted); line-height: 1.5;">
+            <strong>Core Concept:</strong> Sedimentary rock analysis, hematite spherules ("blueberries"), and evidence of ancient martian oceans.
+          </p>
+          <div style="background: rgba(8, 11, 22, 0.6); padding: 0.75rem; border-radius: 0.5rem; margin: 0.85rem 0; font-size: 0.82rem; line-height: 1.5;">
+            <strong>Discussion Prompt:</strong> How did Opportunity’s discovery of jarosite and sulfate minerals prove that ancient Mars had liquid water with neutral-to-acidic pH? What does this imply about the potential for past microbial life?
+          </div>
+          <p style="font-size: 0.8rem; color: var(--accent);">
+            → Recommended Tool: <a href="then-now.html" style="text-decoration: underline;">Then & Now Slider</a>
+          </p>
+        </div>
+
+        <!-- Module 3 -->
+        <div class="lesson-card">
+          <div class="lesson-badge">MODULE 3 · INTERSTELLAR ANTHROPOLOGY</div>
+          <h2 style="font-size: 1.25rem; margin: 0.4rem 0;">The Voyager Golden Record</h2>
+          <p style="font-size: 0.85rem; color: var(--muted); line-height: 1.5;">
+            <strong>Core Concept:</strong> Communicating across deep time and cosmic civilizations through binary mathematics and atomic constants.
+          </p>
+          <div style="background: rgba(8, 11, 22, 0.6); padding: 0.75rem; border-radius: 0.5rem; margin: 0.85rem 0; font-size: 0.82rem; line-height: 1.5;">
+            <strong>Class Activity:</strong> Have students select three contemporary sounds, one song, and one mathematical diagram to represent 21st-century civilization to an extraterrestrial intelligence.
+          </div>
+          <p style="font-size: 0.8rem; color: var(--accent);">
+            → Recommended Tool: <a href="ask.html" style="text-decoration: underline;">Ask Voyager 1</a>
+          </p>
+        </div>
+
+        <!-- Module 4 -->
+        <div class="lesson-card">
+          <div class="lesson-badge">MODULE 4 · ETHICS & ORBITAL MECHANICS</div>
+          <h2 style="font-size: 1.25rem; margin: 0.4rem 0;">Planetary Protection & The Grand Finale</h2>
+          <p style="font-size: 0.85rem; color: var(--muted); line-height: 1.5;">
+            <strong>Core Concept:</strong> COSPAR planetary protection protocols and intentional spacecraft disposal.
+          </p>
+          <div style="background: rgba(8, 11, 22, 0.6); padding: 0.75rem; border-radius: 0.5rem; margin: 0.85rem 0; font-size: 0.82rem; line-height: 1.5;">
+            <strong>Ethics Debate:</strong> Why did NASA choose to destroy the pristine Cassini orbiter in Saturn's atmosphere rather than let it drift in orbit indefinitely? How do Enceladus's geysers justify destroying an expensive spacecraft?
+          </div>
+          <p style="font-size: 0.8rem; color: var(--accent);">
+            → Recommended Tool: <a href="farewell.html" style="text-decoration: underline;">The Farewell Memorial</a>
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer no-print">
+      <span data-i18n="footer_tag">ABNF · A home for forgotten space stories</span>
+      <span data-i18n="footer_motto">Explore. Remember. Wonder.</span>
+    </footer>
+  </body>
+</html>

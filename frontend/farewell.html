@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Leave a tribute note for the robotic pioneers that carried humanity's dreams across deep space." />
+    <title>The Farewell Wall | Spacecraft Memorial | ABNF</title>
+    <link rel="stylesheet" href="css/auth.css" />
+    <link rel="stylesheet" href="css/tools.css" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <script defer src="js/i18n.js"></script>
+    <script defer src="js/pwa.js"></script>
+    <script defer src="js/farewell.js"></script>
+  </head>
+  <body data-page="farewell">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-header">
+      <a class="brand" href="/">ABNF<span>.</span></a>
+      <nav class="header-actions" aria-label="Navigation">
+        <a class="button button-quiet" href="/" data-i18n="nav_home">Home</a>
+        <a class="button button-quiet" href="explore.html" data-i18n="nav_explore">Explore</a>
+        <a class="button button-quiet" href="mission.html" data-i18n="nav_stories">Stories</a>
+        <a class="button button-quiet" href="quiz.html" data-i18n="nav_quiz">Quiz</a>
+        <a class="button button-quiet" href="signal.html" data-i18n="nav_signal">Signal Delay</a>
+        <a class="button button-primary" href="farewell.html" data-i18n="nav_farewell" aria-current="page">Farewell Wall</a>
+        <button class="button button-quiet" type="button" data-pwa-install hidden data-i18n="nav_install">📱 Install App</button>
+      </nav>
+    </header>
+
+    <main class="tool-page-container" id="main-content" tabindex="-1">
+      <nav class="tool-subnav" aria-label="Tool Navigation">
+        <a class="tool-subnav-link" href="signal.html" data-i18n="nav_signal">📡 Signal Delay</a>
+        <a class="tool-subnav-link" href="then-now.html" data-i18n="nav_then_now">⏱️ Then & Now</a>
+        <a class="tool-subnav-link" href="ask.html" data-i18n="nav_ask">🤖 Ask the Machine</a>
+        <a class="tool-subnav-link" href="lander.html" data-i18n="nav_lander">🚀 Lander Game</a>
+        <a class="tool-subnav-link is-active" href="farewell.html" data-i18n="nav_farewell">💌 Farewell Wall</a>
+        <a class="tool-subnav-link" href="ar.html" data-i18n="nav_ar">🛰️ AR Hologram</a>
+        <a class="tool-subnav-link" href="teachers.html" data-i18n="nav_teachers">📚 Teacher Pack</a>
+      </nav>
+
+      <div class="tool-header">
+        <p class="eyebrow" data-i18n="hero_eyebrow">HUMAN TRIBUTES TO SILENT MACHINES</p>
+        <h1 data-i18n="farewell_title">The Farewell <span>Wall</span></h1>
+        <p data-i18n="farewell_subtitle">
+          Opportunity on Mars, Cassini in Saturn, Voyager 1 in the void, and Apollo’s lunar buggy. Leave a personal note, poem, or thank-you to the machines that expanded human consciousness.
+        </p>
+      </div>
+
+      <div class="farewell-header-action">
+        <!-- Filter Tabs -->
+        <div class="comparison-selector" style="margin-bottom: 0;">
+          <button class="comp-pill is-active" type="button" data-filter="all">All Memorials</button>
+          <button class="comp-pill" type="button" data-filter="opportunity">Opportunity</button>
+          <button class="comp-pill" type="button" data-filter="voyager1">Voyager 1</button>
+          <button class="comp-pill" type="button" data-filter="cassini">Cassini</button>
+          <button class="comp-pill" type="button" data-filter="spirit">Spirit</button>
+          <button class="comp-pill" type="button" data-filter="apollo15">Apollo 15 Rover</button>
+        </div>
+
+        <button class="button button-primary" id="openTributeModalBtn" type="button" data-i18n="farewell_btn_leave">
+          ✍️ Write a Farewell Note
+        </button>
+      </div>
+
+      <!-- Tribute Cards Grid -->
+      <div class="tribute-cards-grid" id="tributesGrid"></div>
+
+      <!-- Add Tribute Modal Backdrop -->
+      <div class="modal-backdrop" id="tributeModal" hidden>
+        <div class="modal-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+            <h2 style="margin: 0; font-size: 1.3rem;">Leave a Farewell Tribute</h2>
+            <button id="closeTributeModalBtn" type="button" style="background: none; border: none; color: var(--muted); font-size: 1.5rem; cursor: pointer;">✕</button>
+          </div>
+
+          <form id="tributeForm">
+            <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.25rem;" for="tribAuthor">Your Name</label>
+            <input id="tribAuthor" name="author" type="text" placeholder="e.g. Alex Vance" required style="width: 100%; background: rgba(255,255,255,0.06); border: 1px solid var(--line); border-radius: 0.6rem; padding: 0.6rem; color: #fff; margin-bottom: 0.85rem;" />
+
+            <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.25rem;" for="tribCallsign">Explorer Callsign (Optional)</label>
+            <input id="tribCallsign" name="callsign" type="text" placeholder="e.g. Sol-Observer" style="width: 100%; background: rgba(255,255,255,0.06); border: 1px solid var(--line); border-radius: 0.6rem; padding: 0.6rem; color: #fff; margin-bottom: 0.85rem;" />
+
+            <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.25rem;" for="tribProbe">Select Spacecraft</label>
+            <select id="tribProbe" name="probe" class="lang-select" style="width: 100%; border-radius: 0.6rem; padding: 0.6rem; margin-bottom: 0.85rem;">
+              <option value="opportunity">Opportunity (Mars Exploration Rover B)</option>
+              <option value="voyager1">Voyager 1 (Interstellar Spacecraft)</option>
+              <option value="cassini">Cassini-Huygens (Saturn Orbiter)</option>
+              <option value="spirit">Spirit (Mars Exploration Rover A)</option>
+              <option value="apollo15">Apollo 15 Lunar Roving Vehicle</option>
+            </select>
+
+            <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.25rem;" for="tribMessage">Your Tribute Message</label>
+            <textarea id="tribMessage" name="message" rows="4" maxlength="400" placeholder="Write what this mission meant to you..." required style="width: 100%; background: rgba(255,255,255,0.06); border: 1px solid var(--line); border-radius: 0.6rem; padding: 0.6rem; color: #fff; margin-bottom: 1rem; font-family: inherit; line-height: 1.5;"></textarea>
+
+            <div id="tributeFormStatus" style="font-size: 0.8rem; color: var(--accent); margin-bottom: 0.85rem;"></div>
+
+            <button class="button button-primary button-full" type="submit">
+              Post to Memorial Wall
+            </button>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <span data-i18n="footer_tag">ABNF · A home for forgotten space stories</span>
+      <span data-i18n="footer_motto">Explore. Remember. Wonder.</span>
+    </footer>
+  </body>
+</html>

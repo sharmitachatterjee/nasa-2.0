@@ -11,6 +11,10 @@
     <link rel="stylesheet" href="css/auth.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="css/map.css" />
+    <link rel="stylesheet" href="css/tools.css" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <script defer src="js/i18n.js"></script>
+    <script defer src="js/pwa.js"></script>
     <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script defer src="js/map.js"></script>
   </head>
@@ -19,10 +23,13 @@
     <header class="site-header">
       <a class="brand" href="/">ABNF<span>.</span></a>
       <nav class="header-actions" aria-label="Main navigation">
-        <a class="button button-quiet" href="/">Home</a>
-        <a class="button button-quiet" href="mission.html">Stories</a>
-        <a class="button button-quiet" href="quiz.html">Quiz</a>
-        <a class="button button-primary" href="explore.html" aria-current="page">Explore</a>
+        <a class="button button-quiet" href="/" data-i18n="nav_home">Home</a>
+        <a class="button button-primary" href="explore.html" aria-current="page" data-i18n="nav_explore">Explore</a>
+        <a class="button button-quiet" href="mission.html" data-i18n="nav_stories">Stories</a>
+        <a class="button button-quiet" href="quiz.html" data-i18n="nav_quiz">Quiz</a>
+        <a class="button button-quiet" href="signal.html" data-i18n="nav_signal">Signal Delay</a>
+        <a class="button button-quiet" href="ask.html" data-i18n="nav_ask">Ask Machine</a>
+        <button class="button button-quiet" type="button" data-pwa-install hidden data-i18n="nav_install">📱 Install App</button>
       </nav>
     </header>
 

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="About Abandoned but Not Forgotten (ABNF) — dedicated to celebrating the legacy of retired space exploration missions." />
+    <title>About ABNF | Abandoned but Not Forgotten</title>
+    <link rel="stylesheet" href="css/auth.css" />
+    <link rel="stylesheet" href="css/tools.css" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <script defer src="js/i18n.js"></script>
+    <script defer src="js/pwa.js"></script>
+  </head>
+  <body data-page="about">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-header">
+      <a class="brand" href="/">ABNF<span>.</span></a>
+      <nav class="header-actions" aria-label="Navigation">
+        <a class="button button-quiet" href="/" data-i18n="nav_home">Home</a>
+        <a class="button button-quiet" href="explore.html" data-i18n="nav_explore">Explore</a>
+        <a class="button button-quiet" href="mission.html" data-i18n="nav_stories">Stories</a>
+        <a class="button button-quiet" href="quiz.html" data-i18n="nav_quiz">Quiz</a>
+        <a class="button button-primary" href="about.html" aria-current="page">About</a>
+        <button class="button button-quiet" type="button" data-pwa-install hidden data-i18n="nav_install">📱 Install App</button>
+      </nav>
+    </header>
+
+    <main class="tool-page-container" id="main-content" tabindex="-1">
+      <div class="tool-header">
+        <p class="eyebrow" data-i18n="hero_eyebrow">OUR MISSION & PHILOSOPHY</p>
+        <h1>About <span>ABNF</span></h1>
+        <p>
+          Abandoned but Not Forgotten (ABNF) is an interactive deep-space archive honoring the robotic pioneers that ventured into the cosmic unknown on behalf of all humanity.
+        </p>
+      </div>
+
+      <div style="display: grid; gap: 1.5rem; max-width: 820px; margin: 0 auto;">
+        <div class="signal-control-card">
+          <h2 style="font-size: 1.3rem; margin-top: 0;">Why Remember?</h2>
+          <p style="color: var(--muted); line-height: 1.6;">
+            When space missions conclude, headlines fade. Yet their artifacts remain: rovers perched on martian ridge-lines, lunar rovers parked beside pristine craters, and probes coasting forever through the dark between stars. ABNF exists to ensure their discoveries, courage, and poetry remain vivid, accessible, and inspiring for the next generation of explorers.
+          </p>
+        </div>
+
+        <div class="signal-control-card">
+          <h2 style="font-size: 1.3rem; margin-top: 0;">Open Science & Public Data Sources</h2>
+          <ul style="color: var(--muted); line-height: 1.8; padding-left: 1.25rem;">
+            <li><strong>NASA JPL Horizons API:</strong> Real-time orbital ephemerides and distance telemetry for Voyager 1 and planetary bodies.</li>
+            <li><strong>NASA Open APIs & NASA Image Library:</strong> Historical mission photography, rover imagery, and APOD.</li>
+            <li><strong>NASA Trek WMTS:</strong> High-resolution lunar and martian surface cartography tiles.</li>
+            <li><strong>Google Gemini AI:</strong> Historical persona simulation engines emulating spacecraft telemetry logs.</li>
+            <li><strong>Supabase Auth & Database:</strong> User profiles and community memorial tributes.</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <span data-i18n="footer_tag">ABNF · A home for forgotten space stories</span>
+      <span data-i18n="footer_motto">Explore. Remember. Wonder.</span>
+    </footer>
+  </body>
+</html>

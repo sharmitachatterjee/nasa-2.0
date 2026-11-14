@@ -5,10 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Explore the stories of space missions that time almost forgot."
+      content="Explore the stories, signal delays, interactive comparisons, and legacies of space missions that time almost forgot."
     />
-    <title>Abandoned but Not Forgotten | Space Mission Stories</title>
+    <title>Abandoned but Not Forgotten | Space Mission Stories & Tools</title>
     <link rel="stylesheet" href="css/auth.css" />
+    <link rel="stylesheet" href="css/tools.css" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <script defer src="js/i18n.js"></script>
+    <script defer src="js/pwa.js"></script>
     <script type="module" src="js/auth.js"></script>
   </head>
   <body data-page="home">
@@ -16,54 +20,174 @@
     <header class="site-header">
       <a class="brand" href="/">ABNF<span>.</span></a>
       <nav class="header-actions" aria-label="Account">
-        <a class="button button-quiet" href="explore.html">Explore</a>
-        <a class="button button-quiet" href="mission.html">Stories</a>
-        <a class="button button-quiet" href="quiz.html">Quiz</a>
-        <a class="button button-quiet" href="login.html" data-signed-out>Log in</a>
-        <a class="button button-primary" href="signup.html" data-signed-out>
-          Create account
+        <a class="button button-quiet" href="explore.html" data-i18n="nav_explore">Explore</a>
+        <a class="button button-quiet" href="mission.html" data-i18n="nav_stories">Stories</a>
+        <a class="button button-quiet" href="quiz.html" data-i18n="nav_quiz">Quiz</a>
+        <a class="button button-quiet" href="signal.html" data-i18n="nav_signal">Signal Delay</a>
+        <a class="button button-quiet" href="ask.html" data-i18n="nav_ask">Ask Machine</a>
+        <a class="button button-quiet" href="login.html" data-signed-out data-i18n="nav_login">Log in</a>
+        <a class="button button-primary" href="signup.html" data-signed-out data-i18n="nav_signup">
+          Join mission
         </a>
-        <a class="button button-primary" href="dashboard.html" data-signed-in hidden>
+        <a class="button button-primary" href="dashboard.html" data-signed-in hidden data-i18n="nav_dashboard">
           My dashboard
         </a>
-        <button class="button button-quiet" type="button" data-logout data-signed-in hidden>
+        <button class="button button-quiet" type="button" data-logout data-signed-in hidden data-i18n="nav_logout">
           Log out
+        </button>
+        <button class="button button-quiet" type="button" data-pwa-install hidden data-i18n="nav_install">
+          📱 Install App
         </button>
       </nav>
     </header>
 
     <main class="hero" id="main-content" tabindex="-1">
-      <p class="eyebrow">THE STORIES BEYOND THE HEADLINES</p>
+      <p class="eyebrow" data-i18n="hero_eyebrow">THE STORIES BEYOND THE HEADLINES</p>
       <h1>Some missions end.<br /><span>Their stories don’t.</span></h1>
-      <p class="hero-copy">
-        Discover the spacecraft, rovers, and bold ideas left behind in humanity’s
-        exploration of space.
+      <p class="hero-copy" data-i18n="hero_copy">
+        Discover the spacecraft, rovers, and bold ideas left behind in humanity’s exploration of space.
       </p>
-      <div class="hero-actions">
-        <a class="button button-primary button-large" href="signup.html" data-signed-out>
+      <div class="hero-actions" style="flex-wrap: wrap;">
+        <a class="button button-primary button-large" href="signup.html" data-signed-out data-i18n="nav_signup">
           Start exploring
         </a>
-        <a class="button button-primary button-large" href="dashboard.html" data-signed-in hidden>
+        <a class="button button-primary button-large" href="dashboard.html" data-signed-in hidden data-i18n="nav_dashboard">
           Go to your dashboard
         </a>
-        <a class="button button-quiet button-large" href="login.html" data-signed-out>
-          Log in
-        </a>
-        <a class="button button-quiet button-large" href="explore.html">
+        <a class="button button-quiet button-large" href="explore.html" data-i18n="hero_btn_explore">
           Explore the map
         </a>
-        <a class="button button-quiet button-large" href="mission.html">
+        <a class="button button-quiet button-large" href="mission.html" data-i18n="hero_btn_stories">
           Hear their stories
         </a>
-        <a class="button button-primary button-large" href="quiz.html">
-          Take the explorer quiz
+        <a class="button button-primary button-large" href="quiz.html" data-i18n="hero_btn_quiz">
+          Take the quiz
         </a>
       </div>
       <p class="status-message" role="status" aria-live="polite" data-status></p>
+
+      <!-- Interactive Discovery Tools Grid Showcase -->
+      <section style="width: min(100%, 1140px); margin: 3.5rem auto 1rem; text-align: left;">
+        <div style="border-top: 1px solid var(--line); padding-top: 2.5rem; margin-bottom: 1.5rem;">
+          <p class="eyebrow" style="margin-bottom: 0.25rem;">INTERACTIVE EXPLORATION EXPERIENCES</p>
+          <h2 style="font-size: clamp(1.8rem, 4vw, 2.5rem); margin: 0 0 0.5rem;">
+            Deep Space <span>Discovery Tools</span>
+          </h2>
+          <p style="color: var(--muted); font-size: 0.95rem; max-width: 650px; margin: 0 0 1.5rem;">
+            Simulate real speed-of-light communication delays, compare spacecraft before and after decades in space, converse with probes via AI, and pilot your own descent module.
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem;">
+          <!-- Card 1: Signal Delay -->
+          <a href="signal.html" class="signal-control-card" style="display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s, border-color 0.2s;">
+            <div>
+              <div style="font-size: 2rem; margin-bottom: 0.5rem;">📡</div>
+              <h3 style="font-size: 1.2rem; margin: 0 0 0.4rem; color: #fff;">Signal-Delay Tool</h3>
+              <p style="font-size: 0.85rem; color: var(--muted); line-height: 1.5; margin: 0;">
+                Experience the real physics of communicating across light-hours with Voyager 1, Mars rovers, and Cassini via the Deep Space Network.
+              </p>
+            </div>
+            <div style="margin-top: 1.25rem; font-size: 0.82rem; font-weight: 700; color: var(--accent);">
+              Launch Simulator →
+            </div>
+          </a>
+
+          <!-- Card 2: Then & Now -->
+          <a href="then-now.html" class="signal-control-card" style="display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s, border-color 0.2s;">
+            <div>
+              <div style="font-size: 2rem; margin-bottom: 0.5rem;">⏱️</div>
+              <h3 style="font-size: 1.2rem; margin: 0 0 0.4rem; color: #fff;">Then and Now Slider</h3>
+              <p style="font-size: 0.85rem; color: var(--muted); line-height: 1.5; margin: 0;">
+                Dual-layer interactive slider comparing launch cleanrooms with decades of weathering on Mars, the Moon, and Saturn.
+              </p>
+            </div>
+            <div style="margin-top: 1.25rem; font-size: 0.82rem; font-weight: 700; color: var(--accent);">
+              Compare Images →
+            </div>
+          </a>
+
+          <!-- Card 3: Ask the Machine -->
+          <a href="ask.html" class="signal-control-card" style="display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s, border-color 0.2s;">
+            <div>
+              <div style="font-size: 2rem; margin-bottom: 0.5rem;">🤖</div>
+              <h3 style="font-size: 1.2rem; margin: 0 0 0.4rem; color: #fff;">Ask the Machine (AI)</h3>
+              <p style="font-size: 0.85rem; color: var(--muted); line-height: 1.5; margin: 0;">
+                Converse directly with Opportunity, Voyager 1, Cassini, Spirit, or the Apollo Lunar Rover. Powered by Gemini AI.
+              </p>
+            </div>
+            <div style="margin-top: 1.25rem; font-size: 0.82rem; font-weight: 700; color: var(--accent);">
+              Start Transmission →
+            </div>
+          </a>
+
+          <!-- Card 4: Landing Mini-Game -->
+          <a href="lander.html" class="signal-control-card" style="display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s, border-color 0.2s;">
+            <div>
+              <div style="font-size: 2rem; margin-bottom: 0.5rem;">🚀</div>
+              <h3 style="font-size: 1.2rem; margin: 0 0 0.4rem; color: #fff;">Landing Mini-Game</h3>
+              <p style="font-size: 0.85rem; color: var(--muted); line-height: 1.5; margin: 0;">
+                Pilot your lunar or martian lander through gravity wells and craters. Conserve fuel and touch down safely.
+              </p>
+            </div>
+            <div style="margin-top: 1.25rem; font-size: 0.82rem; font-weight: 700; color: var(--accent);">
+              Play Mini-Game →
+            </div>
+          </a>
+
+          <!-- Card 5: Farewell Wall -->
+          <a href="farewell.html" class="signal-control-card" style="display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s, border-color 0.2s;">
+            <div>
+              <div style="font-size: 2rem; margin-bottom: 0.5rem;">💌</div>
+              <h3 style="font-size: 1.2rem; margin: 0 0 0.4rem; color: #fff;">The Farewell Wall</h3>
+              <p style="font-size: 0.85rem; color: var(--muted); line-height: 1.5; margin: 0;">
+                A community memorial wall. Read heartfelt tributes and leave your own note to humanity’s robotic pioneers.
+              </p>
+            </div>
+            <div style="margin-top: 1.25rem; font-size: 0.82rem; font-weight: 700; color: var(--accent);">
+              Leave a Tribute →
+            </div>
+          </a>
+
+          <!-- Card 6: AR Hologram -->
+          <a href="ar.html" class="signal-control-card" style="display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s, border-color 0.2s;">
+            <div>
+              <div style="font-size: 2rem; margin-bottom: 0.5rem;">🛰️</div>
+              <h3 style="font-size: 1.2rem; margin: 0 0 0.4rem; color: #fff;">AR 3D Hologram Viewer</h3>
+              <p style="font-size: 0.85rem; color: var(--muted); line-height: 1.5; margin: 0;">
+                Rotate and inspect interactive 3D wireframe models of Voyager 1 and Opportunity. Supports mobile gyroscope.
+              </p>
+            </div>
+            <div style="margin-top: 1.25rem; font-size: 0.82rem; font-weight: 700; color: var(--accent);">
+              View Hologram →
+            </div>
+          </a>
+
+          <!-- Card 7: Teacher Pack -->
+          <a href="teachers.html" class="signal-control-card" style="display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s, border-color 0.2s;">
+            <div>
+              <div style="font-size: 2rem; margin-bottom: 0.5rem;">📚</div>
+              <h3 style="font-size: 1.2rem; margin: 0 0 0.4rem; color: #fff;">Teacher & Educator Pack</h3>
+              <p style="font-size: 0.85rem; color: var(--muted); line-height: 1.5; margin: 0;">
+                Free classroom STEM lessons, student physics problem sets, discussion prompts, and printable certificates.
+              </p>
+            </div>
+            <div style="margin-top: 1.25rem; font-size: 0.82rem; font-weight: 700; color: var(--accent);">
+              Open Educator Hub →
+            </div>
+          </a>
+        </div>
+      </section>
     </main>
+
     <footer class="site-footer">
-      <span>ABNF · A home for forgotten space stories</span>
-      <span>Explore. Remember. Wonder.</span>
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.5rem;">
+        <a href="timeline.html" style="text-decoration: underline;">Mission Timeline</a>
+        <a href="about.html" style="text-decoration: underline;">About ABNF</a>
+        <a href="teachers.html" style="text-decoration: underline;">Educator Hub</a>
+      </div>
+      <span data-i18n="footer_tag">ABNF · A home for forgotten space stories</span>
+      <span data-i18n="footer_motto">Explore. Remember. Wonder.</span>
     </footer>
   </body>
 </html>

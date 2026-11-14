@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Simulate real speed-of-light communication delays across deep space with NASA missions." />
+    <title>Deep Space Signal Delay Simulator | ABNF</title>
+    <link rel="stylesheet" href="css/auth.css" />
+    <link rel="stylesheet" href="css/tools.css" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <script defer src="js/i18n.js"></script>
+    <script defer src="js/pwa.js"></script>
+    <script defer src="js/signal.js"></script>
+  </head>
+  <body data-page="signal">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-header">
+      <a class="brand" href="/">ABNF<span>.</span></a>
+      <nav class="header-actions" aria-label="Navigation">
+        <a class="button button-quiet" href="/" data-i18n="nav_home">Home</a>
+        <a class="button button-quiet" href="explore.html" data-i18n="nav_explore">Explore</a>
+        <a class="button button-quiet" href="mission.html" data-i18n="nav_stories">Stories</a>
+        <a class="button button-quiet" href="quiz.html" data-i18n="nav_quiz">Quiz</a>
+        <a class="button button-primary" href="signal.html" data-i18n="nav_signal" aria-current="page">Signal Delay</a>
+        <a class="button button-quiet" href="ask.html" data-i18n="nav_ask">Ask Machine</a>
+        <button class="button button-quiet" type="button" data-pwa-install hidden data-i18n="nav_install">📱 Install App</button>
+      </nav>
+    </header>
+
+    <main class="tool-page-container" id="main-content" tabindex="-1">
+      <nav class="tool-subnav" aria-label="Tool Navigation">
+        <a class="tool-subnav-link is-active" href="signal.html" data-i18n="nav_signal">📡 Signal Delay</a>
+        <a class="tool-subnav-link" href="then-now.html" data-i18n="nav_then_now">⏱️ Then & Now</a>
+        <a class="tool-subnav-link" href="ask.html" data-i18n="nav_ask">🤖 Ask the Machine</a>
+        <a class="tool-subnav-link" href="lander.html" data-i18n="nav_lander">🚀 Lander Game</a>
+        <a class="tool-subnav-link" href="farewell.html" data-i18n="nav_farewell">💌 Farewell Wall</a>
+        <a class="tool-subnav-link" href="ar.html" data-i18n="nav_ar">🛰️ AR Hologram</a>
+        <a class="tool-subnav-link" href="teachers.html" data-i18n="nav_teachers">📚 Teacher Pack</a>
+      </nav>
+
+      <div class="tool-header">
+        <p class="eyebrow" data-i18n="hero_eyebrow">DEEP SPACE NETWORK TELEMETRY</p>
+        <h1 data-i18n="signal_title">Deep Space <span>Signal Delay</span></h1>
+        <p data-i18n="signal_subtitle">
+          Radio waves travel at the speed of light (299,792 km/s), yet in deep space, sending a command takes minutes or hours. Experience the real physics that made autonomous exploration essential.
+        </p>
+      </div>
+
+      <!-- Telemetry Stat HUD -->
+      <div class="signal-hud">
+        <div class="hud-stat">
+          <div class="hud-stat-label">Physical Distance</div>
+          <div class="hud-stat-value" id="statDistance">24,310M km</div>
+          <div class="hud-stat-unit">Earth to Target</div>
+        </div>
+        <div class="hud-stat">
+          <div class="hud-stat-label">One-Way Light Time (OWLT)</div>
+          <div class="hud-stat-value" id="statOwlt">22h 31m</div>
+          <div class="hud-stat-unit">Time for command to arrive</div>
+        </div>
+        <div class="hud-stat">
+          <div class="hud-stat-label">Round-Trip Light Time (RTLT)</div>
+          <div class="hud-stat-value" id="statRtlt">45h 02m</div>
+          <div class="hud-stat-unit">Full loop confirmation delay</div>
+        </div>
+        <div class="hud-stat">
+          <div class="hud-stat-label">Transmission State</div>
+          <div class="hud-stat-value" id="statStatus" style="font-size: 1rem; color: #8af5a2;">IDLE (READY)</div>
+          <div class="hud-stat-unit">DSN 70m Goldstone / Canberra</div>
+        </div>
+      </div>
+
+      <!-- Interactive Canvas Visualizer -->
+      <div class="signal-display-card">
+        <div class="signal-canvas-wrapper">
+          <canvas id="signalCanvas" width="800" height="280"></canvas>
+        </div>
+
+        <div class="signal-progress-wrap">
+          <div style="display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--muted); margin-bottom: 0.4rem;">
+            <span id="signalProgressLabel">Ready to initiate transmission.</span>
+            <span>Speed of Light: 299,792 km/s</span>
+          </div>
+          <div class="signal-progress-bar">
+            <div class="signal-progress-fill" id="signalProgressFill"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="signal-grid" style="margin-top: 1.5rem;">
+        <!-- Controls -->
+        <div class="signal-control-card">
+          <h2 style="font-size: 1.25rem; margin-top: 0;">DSN Uplink Console</h2>
+          
+          <label for="signalTargetSelect" style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.35rem;" data-i18n="signal_target_label">
+            Target Spacecraft:
+          </label>
+          <select id="signalTargetSelect" class="lang-select" style="width: 100%; border-radius: 0.6rem; padding: 0.65rem; margin-bottom: 1rem;">
+            <option value="voyager1">🛰️ Voyager 1 (Interstellar - 24.3 Billion km)</option>
+            <option value="mars_oppy">🤖 Opportunity (Mars - 225 Million km)</option>
+            <option value="moon_apollo15">🌙 Apollo 15 Rover (The Moon - 384,400 km)</option>
+            <option value="cassini_saturn">🪐 Cassini (Saturn Atmosphere - 1.4 Billion km)</option>
+            <option value="new_horizons">☄️ New Horizons (Kuiper Belt - 8.1 Billion km)</option>
+          </select>
+
+          <label for="signalSpeedSelect" style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.35rem;">
+            Simulation Velocity:
+          </label>
+          <select id="signalSpeedSelect" class="lang-select" style="width: 100%; border-radius: 0.6rem; padding: 0.65rem; margin-bottom: 1rem;">
+            <option value="1000">⚡ Demo Speed (1,000x - Fast Demonstration)</option>
+            <option value="10000">🚀 Ultra Warp (10,000x - Instant Preview)</option>
+            <option value="1">⏱️ Real Time (1x - True Physics Speed)</option>
+          </select>
+
+          <label for="signalMessageInput" style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.35rem;">
+            Uplink Telemetry Command:
+          </label>
+          <input
+            id="signalMessageInput"
+            type="text"
+            value="PING: STATUS_REPORT_REQUEST"
+            style="width: 100%; background: rgba(255,255,255,0.06); border: 1px solid var(--line); border-radius: 0.6rem; padding: 0.65rem 0.85rem; color: #fff; margin-bottom: 1.25rem;"
+          />
+
+          <button id="signalSendBtn" class="button button-primary button-full" type="button" data-i18n="signal_btn_send">
+            Transmit Signal at Light Speed
+          </button>
+        </div>
+
+        <!-- Telemetry Log -->
+        <div class="signal-display-card">
+          <h2 style="font-size: 1.25rem; margin-top: 0; display: flex; justify-content: space-between; align-items: center;">
+            <span>Deep Space Network Log</span>
+            <span style="font-size: 0.75rem; color: #8af5a2; font-family: ui-monospace, monospace;">DSN CARRIER: LOCKED</span>
+          </h2>
+          <div class="signal-telemetry-log" id="signalLog">
+            <div>[00:00:00] Deep Space Network Antenna 70m initialized.</div>
+            <div>[00:00:00] System ready. Select target and click Transmit.</div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <span data-i18n="footer_tag">ABNF · A home for forgotten space stories</span>
+      <span data-i18n="footer_motto">Explore. Remember. Wonder.</span>
+    </footer>
+  </body>
+</html>

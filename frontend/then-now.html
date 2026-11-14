@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Interactive before-and-after comparisons of pioneering NASA spacecraft and landing sites." />
+    <title>Then and Now | Spacecraft Comparison Slider | ABNF</title>
+    <link rel="stylesheet" href="css/auth.css" />
+    <link rel="stylesheet" href="css/tools.css" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <script defer src="js/i18n.js"></script>
+    <script defer src="js/pwa.js"></script>
+    <script defer src="js/then-now.js"></script>
+  </head>
+  <body data-page="then-now">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-header">
+      <a class="brand" href="/">ABNF<span>.</span></a>
+      <nav class="header-actions" aria-label="Navigation">
+        <a class="button button-quiet" href="/" data-i18n="nav_home">Home</a>
+        <a class="button button-quiet" href="explore.html" data-i18n="nav_explore">Explore</a>
+        <a class="button button-quiet" href="mission.html" data-i18n="nav_stories">Stories</a>
+        <a class="button button-quiet" href="quiz.html" data-i18n="nav_quiz">Quiz</a>
+        <a class="button button-quiet" href="signal.html" data-i18n="nav_signal">Signal Delay</a>
+        <a class="button button-primary" href="then-now.html" data-i18n="nav_then_now" aria-current="page">Then & Now</a>
+        <button class="button button-quiet" type="button" data-pwa-install hidden data-i18n="nav_install">📱 Install App</button>
+      </nav>
+    </header>
+
+    <main class="tool-page-container" id="main-content" tabindex="-1">
+      <nav class="tool-subnav" aria-label="Tool Navigation">
+        <a class="tool-subnav-link" href="signal.html" data-i18n="nav_signal">📡 Signal Delay</a>
+        <a class="tool-subnav-link is-active" href="then-now.html" data-i18n="nav_then_now">⏱️ Then & Now</a>
+        <a class="tool-subnav-link" href="ask.html" data-i18n="nav_ask">🤖 Ask the Machine</a>
+        <a class="tool-subnav-link" href="lander.html" data-i18n="nav_lander">🚀 Lander Game</a>
+        <a class="tool-subnav-link" href="farewell.html" data-i18n="nav_farewell">💌 Farewell Wall</a>
+        <a class="tool-subnav-link" href="ar.html" data-i18n="nav_ar">🛰️ AR Hologram</a>
+        <a class="tool-subnav-link" href="teachers.html" data-i18n="nav_teachers">📚 Teacher Pack</a>
+      </nav>
+
+      <div class="tool-header">
+        <p class="eyebrow" data-i18n="hero_eyebrow">HISTORICAL VISUAL ARCHIVE</p>
+        <h1 data-i18n="then_now_title">Then and <span>Now</span></h1>
+        <p data-i18n="then_now_subtitle">
+          Drag the slider to compare pristine launch milestones with the weathered reality of deep space and planetary surfaces over decades of cosmic exposure.
+        </p>
+      </div>
+
+      <div class="then-now-container">
+        <!-- Comparison Category Selector -->
+        <div class="comparison-selector" role="group" aria-label="Choose a comparison">
+          <button class="comp-pill is-active" type="button" data-comp="oppy">🤖 Opportunity: Sol 1 vs Sol 5,000</button>
+          <button class="comp-pill" type="button" data-comp="apollo">🌙 Apollo 15 Rover: 1971 vs Orbit 2020</button>
+          <button class="comp-pill" type="button" data-comp="jezero">🌊 Mars: Ancient Lake vs Dry Desert</button>
+          <button class="comp-pill" type="button" data-comp="golden_record">📀 Golden Record: Cleanroom vs Stars</button>
+          <button class="comp-pill" type="button" data-comp="enceladus">❄️ Enceladus: Inert Ice vs Geysers</button>
+        </div>
+
+        <!-- Interactive Comparison Slider Frame -->
+        <div class="slider-frame" id="sliderFrame" role="slider" aria-label="Before and after comparison slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+          <img class="slider-img slider-img-then" id="sliderImgThen" src="" alt="Historical comparison view (Then)" />
+          <img class="slider-img slider-img-now" id="sliderImgNow" src="" alt="Modern comparison view (Now)" />
+          <div class="slider-divider" id="sliderDivider"></div>
+          <div class="slider-handle" id="sliderHandle" aria-hidden="true">↔</div>
+          <span class="slider-badge slider-badge-then" id="badgeThen">THEN</span>
+          <span class="slider-badge slider-badge-now" id="badgeNow">NOW</span>
+        </div>
+
+        <!-- Story and Science Box -->
+        <div class="slider-story-box">
+          <h2 id="sliderStoryTitle" style="margin-top: 0; font-size: 1.4rem;"></h2>
+          <p id="sliderStorySubtitle" style="color: var(--accent); font-weight: 600; margin-bottom: 0.75rem;"></p>
+          <p id="sliderStoryText"></p>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <span data-i18n="footer_tag">ABNF · A home for forgotten space stories</span>
+      <span data-i18n="footer_motto">Explore. Remember. Wonder.</span>
+    </footer>
+  </body>
+</html>

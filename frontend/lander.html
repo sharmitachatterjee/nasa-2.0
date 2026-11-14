@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Pilot your lunar or martian lander to a safe touchdown in this retro arcade physics mini-game." />
+    <title>Lunar & Martian Lander Mini-Game | ABNF</title>
+    <link rel="stylesheet" href="css/auth.css" />
+    <link rel="stylesheet" href="css/tools.css" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <script defer src="js/i18n.js"></script>
+    <script defer src="js/pwa.js"></script>
+    <script defer src="js/lander.js"></script>
+  </head>
+  <body data-page="lander">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-header">
+      <a class="brand" href="/">ABNF<span>.</span></a>
+      <nav class="header-actions" aria-label="Navigation">
+        <a class="button button-quiet" href="/" data-i18n="nav_home">Home</a>
+        <a class="button button-quiet" href="explore.html" data-i18n="nav_explore">Explore</a>
+        <a class="button button-quiet" href="mission.html" data-i18n="nav_stories">Stories</a>
+        <a class="button button-quiet" href="quiz.html" data-i18n="nav_quiz">Quiz</a>
+        <a class="button button-quiet" href="signal.html" data-i18n="nav_signal">Signal Delay</a>
+        <a class="button button-primary" href="lander.html" data-i18n="nav_lander" aria-current="page">Lander Game</a>
+        <button class="button button-quiet" type="button" data-pwa-install hidden data-i18n="nav_install">📱 Install App</button>
+      </nav>
+    </header>
+
+    <main class="tool-page-container" id="main-content" tabindex="-1">
+      <nav class="tool-subnav" aria-label="Tool Navigation">
+        <a class="tool-subnav-link" href="signal.html" data-i18n="nav_signal">📡 Signal Delay</a>
+        <a class="tool-subnav-link" href="then-now.html" data-i18n="nav_then_now">⏱️ Then & Now</a>
+        <a class="tool-subnav-link" href="ask.html" data-i18n="nav_ask">🤖 Ask the Machine</a>
+        <a class="tool-subnav-link is-active" href="lander.html" data-i18n="nav_lander">🚀 Lander Game</a>
+        <a class="tool-subnav-link" href="farewell.html" data-i18n="nav_farewell">💌 Farewell Wall</a>
+        <a class="tool-subnav-link" href="ar.html" data-i18n="nav_ar">🛰️ AR Hologram</a>
+        <a class="tool-subnav-link" href="teachers.html" data-i18n="nav_teachers">📚 Teacher Pack</a>
+      </nav>
+
+      <div class="tool-header">
+        <p class="eyebrow" data-i18n="hero_eyebrow">RETRO ARCADE DESCENT SIMULATOR</p>
+        <h1 data-i18n="lander_title">Lunar & Martian <span>Lander</span></h1>
+        <p data-i18n="lander_subtitle">
+          Guide your robotic lander through treacherous gravity wells and jagged craters. Use arrow keys or touch controls to fire thrusters, conserve fuel, and land gently on designated landing pads.
+        </p>
+      </div>
+
+      <!-- Environment Selector Buttons -->
+      <div style="display: flex; gap: 0.75rem; margin-bottom: 1.25rem;">
+        <button class="comp-pill is-active" id="envMoonBtn" type="button">🌙 The Moon (1/6 Earth Gravity · Vacuum)</button>
+        <button class="comp-pill" id="envMarsBtn" type="button">🔴 Mars (3/8 Earth Gravity · Thin Atmosphere)</button>
+      </div>
+
+      <div class="game-container">
+        <!-- Viewport & Canvas -->
+        <div class="game-viewport">
+          <canvas id="landerCanvas" width="680" height="460"></canvas>
+
+          <!-- On-Screen Touch Controls (Mobile Friendly) -->
+          <div class="game-touch-controls">
+            <button class="touch-btn" id="touchLeft" type="button" data-i18n="lander_btn_left">◀ ROTATE</button>
+            <button class="touch-btn touch-btn-main" id="touchThrust" type="button" data-i18n="lander_btn_thrust">🔥 FIRE THRUSTER (W / ↑)</button>
+            <button class="touch-btn" id="touchRight" type="button" data-i18n="lander_btn_right">ROTATE ▶</button>
+          </div>
+        </div>
+
+        <!-- Telemetry & Controls Side Panel -->
+        <div class="signal-control-card">
+          <h2 style="font-size: 1.25rem; margin-top: 0;">Flight Telemetry</h2>
+
+          <div style="display: grid; gap: 0.85rem; margin-bottom: 1.5rem;">
+            <div class="hud-stat">
+              <div class="hud-stat-label">Descent Fuel</div>
+              <div class="hud-stat-value" id="gameFuel" style="color: #ffcc44;">100%</div>
+            </div>
+            <div class="hud-stat">
+              <div class="hud-stat-label">Altitude</div>
+              <div class="hud-stat-value" id="gameAlt">320m</div>
+            </div>
+            <div class="hud-stat">
+              <div class="hud-stat-label">Horizontal Velocity (Vx)</div>
+              <div class="hud-stat-value" id="gameVx">1.0 m/s</div>
+            </div>
+            <div class="hud-stat">
+              <div class="hud-stat-label">Vertical Descent (Vy)</div>
+              <div class="hud-stat-value" id="gameVy" style="color: #55ffb2;">0.0 m/s</div>
+              <div class="hud-stat-unit">Safe landing requires &lt; 1.4 m/s</div>
+            </div>
+            <div class="hud-stat">
+              <div class="hud-stat-label">Mission Score</div>
+              <div class="hud-stat-value" id="gameScore" style="color: #b7a4ff;">0</div>
+            </div>
+          </div>
+
+          <div id="gameStatusMsg" style="font-size: 0.82rem; font-weight: 700; min-height: 48px; line-height: 1.5; color: #b7a4ff; margin-bottom: 1rem;">
+            PILOTING DESCENT STAGE — TOUCHDOWN SPEED MUST BE &lt; 1.4 M/S
+          </div>
+
+          <button class="button button-primary button-full" id="gameRestartBtn" type="button" data-i18n="lander_btn_restart">
+            Restart Mission
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <span data-i18n="footer_tag">ABNF · A home for forgotten space stories</span>
+      <span data-i18n="footer_motto">Explore. Remember. Wonder.</span>
+    </footer>
+  </body>
+</html>

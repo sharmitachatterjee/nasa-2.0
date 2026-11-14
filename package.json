@@ -1,0 +1,9 @@
+{
+  "name": "nasa-2.0",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Abandoned but Not Forgotten - Space Mission Stories",
+  "scripts": {
+    "start": "node backend/server.js"
+  }
+}

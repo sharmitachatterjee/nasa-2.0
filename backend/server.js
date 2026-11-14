@@ -1,11 +1,16 @@
 const path = require("node:path");
+require("dotenv").config({ path: path.join(__dirname, ".env") });
 const express = require("express");
 const { getVoyagerEphemeris } = require("./services/voyager");
-require("dotenv").config({ path: path.join(__dirname, ".env") });
+const askMachineHandler = require("../api/ask-machine");
+const tributesHandler = require("../api/tributes");
+const nasaHandler = require("../api/nasa");
 
 const app = express();
 const frontendPath = path.join(__dirname, "..", "frontend");
 const port = Number(process.env.PORT) || 3000;
+
+app.use(express.json());
 
 app.get("/api/config", (req, res) => {
   const supabaseUrl = process.env.SUPABASE_URL?.trim();
@@ -51,6 +56,21 @@ app.get("/api/voyager", async (req, res) => {
       error: "JPL Horizons could not provide Voyager 1's current distance. Try again shortly.",
     });
   }
+});
+
+// Ask the Machine (Gemini AI Spacecraft Persona)
+app.all("/api/ask-machine", (req, res) => {
+  return askMachineHandler(req, res);
+});
+
+// Farewell Wall (Tributes API)
+app.all("/api/tributes", (req, res) => {
+  return tributesHandler(req, res);
+});
+
+// NASA Open API Proxy
+app.all("/api/nasa", (req, res) => {
+  return nasaHandler(req, res);
 });
 
 app.use(express.static(frontendPath));

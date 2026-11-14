@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Interactive 3D Holographic wireframe model viewer for Voyager 1 and Mars rover Opportunity." />
+    <title>AR 3D Spacecraft Hologram Viewer | ABNF</title>
+    <link rel="stylesheet" href="css/auth.css" />
+    <link rel="stylesheet" href="css/tools.css" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <script defer src="js/i18n.js"></script>
+    <script defer src="js/pwa.js"></script>
+    <script defer src="js/ar.js"></script>
+  </head>
+  <body data-page="ar">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-header">
+      <a class="brand" href="/">ABNF<span>.</span></a>
+      <nav class="header-actions" aria-label="Navigation">
+        <a class="button button-quiet" href="/" data-i18n="nav_home">Home</a>
+        <a class="button button-quiet" href="explore.html" data-i18n="nav_explore">Explore</a>
+        <a class="button button-quiet" href="mission.html" data-i18n="nav_stories">Stories</a>
+        <a class="button button-quiet" href="quiz.html" data-i18n="nav_quiz">Quiz</a>
+        <a class="button button-quiet" href="signal.html" data-i18n="nav_signal">Signal Delay</a>
+        <a class="button button-primary" href="ar.html" data-i18n="nav_ar" aria-current="page">AR View</a>
+        <button class="button button-quiet" type="button" data-pwa-install hidden data-i18n="nav_install">📱 Install App</button>
+      </nav>
+    </header>
+
+    <main class="tool-page-container" id="main-content" tabindex="-1">
+      <nav class="tool-subnav" aria-label="Tool Navigation">
+        <a class="tool-subnav-link" href="signal.html" data-i18n="nav_signal">📡 Signal Delay</a>
+        <a class="tool-subnav-link" href="then-now.html" data-i18n="nav_then_now">⏱️ Then & Now</a>
+        <a class="tool-subnav-link" href="ask.html" data-i18n="nav_ask">🤖 Ask the Machine</a>
+        <a class="tool-subnav-link" href="lander.html" data-i18n="nav_lander">🚀 Lander Game</a>
+        <a class="tool-subnav-link" href="farewell.html" data-i18n="nav_farewell">💌 Farewell Wall</a>
+        <a class="tool-subnav-link is-active" href="ar.html" data-i18n="nav_ar">🛰️ AR Hologram</a>
+        <a class="tool-subnav-link" href="teachers.html" data-i18n="nav_teachers">📚 Teacher Pack</a>
+      </nav>
+
+      <div class="tool-header">
+        <p class="eyebrow" data-i18n="hero_eyebrow">3D VECTOR HOLOGRAPHY</p>
+        <h1>Spacecraft <span>Hologram</span> Viewer</h1>
+        <p>
+          Drag or tilt your mobile device to rotate full 3D interactive wireframe holograms of humanity’s landmark exploratory spacecraft. Inspect critical engineering components.
+        </p>
+      </div>
+
+      <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1.25rem;">
+        <button class="comp-pill is-active" type="button" data-model="voyager1">🛰️ Voyager 1 (Interstellar Probe)</button>
+        <button class="comp-pill" type="button" data-model="opportunity">🤖 Opportunity (Mars Exploration Rover)</button>
+      </div>
+
+      <div class="game-container">
+        <!-- 3D Viewport -->
+        <div class="signal-display-card" style="padding: 0; overflow: hidden; position: relative;">
+          <canvas id="arCanvas" style="display: block; width: 100%; cursor: grab; background: radial-gradient(circle at 50% 50%, #10152c 0%, #05070f 100%);"></canvas>
+
+          <div style="position: absolute; bottom: 1rem; left: 1rem; display: flex; gap: 0.5rem; z-index: 10;">
+            <button class="button button-quiet" id="toggleSpinBtn" type="button" style="font-size: 0.8rem; padding: 0.4rem 0.8rem;">
+              ⏸️ Pause Spin
+            </button>
+            <button class="button button-quiet" id="toggleColorBtn" type="button" style="font-size: 0.8rem; padding: 0.4rem 0.8rem;">
+              🎨 Change Glow Color
+            </button>
+          </div>
+        </div>
+
+        <!-- Hotspots & Tech Specs -->
+        <div class="signal-control-card">
+          <h2 style="font-size: 1.2rem; margin-top: 0;">Subsystem Hotspots</h2>
+          <p id="modelSpecs" style="font-size: 0.8rem; color: var(--muted); line-height: 1.5; margin-bottom: 1.25rem;"></p>
+          
+          <div id="hotspotList"></div>
+
+          <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--line); font-size: 0.78rem; color: var(--muted);">
+            💡 <em>Tip: On mobile devices with a gyroscope, tilting your phone automatically rotates the hologram in real space!</em>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <span data-i18n="footer_tag">ABNF · A home for forgotten space stories</span>
+      <span data-i18n="footer_motto">Explore. Remember. Wonder.</span>
+    </footer>
+  </body>
+</html>
