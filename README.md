@@ -57,6 +57,10 @@ documented mission histories, not real spacecraft testimony. The stories are
 loaded from `frontend/data/stories.json` and link to NASA sources. Mission
 images and their credits come from the public NASA Image and Video Library;
 that catalog does not require an API key.
+Stories can also be played, paused, resumed, and stopped with the browser's
+built-in `speechSynthesis` voice. Narration reads the complete selected story
+independently of the typewriter animation; it requires no API key or `.env`
+setting, and is unavailable in browsers without speech synthesis support.
 
 The story page also shows Voyager 1's changing Earth distance from JPL
 Horizons. The backend requests the public Horizons API, caches each result for

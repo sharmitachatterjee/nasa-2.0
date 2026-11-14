@@ -5,6 +5,10 @@ const storyAccessible = document.querySelector("[data-story-accessible]");
 const storyCursor = document.querySelector("[data-story-cursor]");
 const storyProgress = document.querySelector("[data-story-progress]");
 const typewriterButton = document.querySelector("[data-typewriter]");
+const narrationButton = document.querySelector("[data-narrate]");
+const narrationPauseButton = document.querySelector("[data-narration-pause]");
+const narrationStopButton = document.querySelector("[data-narration-stop]");
+const narrationStatus = document.querySelector("[data-narration-status]");
 const storyFigure = document.querySelector("[data-story-figure]");
 const storyImage = document.querySelector("[data-story-image]");
 const storyImageLink = document.querySelector("[data-story-image-link]");
@@ -35,6 +39,77 @@ let typingTimer;
 let typingToken = 0;
 let imageToken = 0;
 let prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+let narrationToken = 0;
+let currentUtterance;
+const narrationSupported =
+  typeof window.speechSynthesis !== "undefined" &&
+  typeof window.SpeechSynthesisUtterance === "function";
+
+function stopNarration(message = "Narration stopped.") {
+  narrationToken += 1;
+  if (narrationSupported) window.speechSynthesis.cancel();
+  currentUtterance = undefined;
+  narrationButton.textContent = "Listen to story";
+  narrationPauseButton.disabled = true;
+  narrationPauseButton.textContent = "Pause";
+  narrationStopButton.disabled = true;
+  if (message) narrationStatus.textContent = message;
+}
+
+function startNarration() {
+  if (!narrationSupported || !currentStory) return;
+  const token = ++narrationToken;
+  window.speechSynthesis.cancel();
+  const utterance = new window.SpeechSynthesisUtterance(
+    `${currentStory.name}. ${currentStory.paragraphs.join(" ")}`,
+  );
+  utterance.lang = document.documentElement.lang || navigator.language;
+  utterance.rate = 0.95;
+  currentUtterance = utterance;
+  narrationButton.textContent = "Listen again";
+  narrationPauseButton.disabled = false;
+  narrationPauseButton.textContent = "Pause";
+  narrationStopButton.disabled = false;
+  narrationStatus.textContent = "Starting narration…";
+
+  utterance.onstart = () => {
+    if (token === narrationToken) narrationStatus.textContent = "Narration playing.";
+  };
+  utterance.onend = () => {
+    if (token !== narrationToken) return;
+    currentUtterance = undefined;
+    narrationButton.textContent = "Listen again";
+    narrationPauseButton.disabled = true;
+    narrationPauseButton.textContent = "Pause";
+    narrationStopButton.disabled = true;
+    narrationStatus.textContent = "Narration finished.";
+  };
+  utterance.onerror = (event) => {
+    if (token !== narrationToken || event.error === "canceled" || event.error === "interrupted") {
+      return;
+    }
+    currentUtterance = undefined;
+    narrationPauseButton.disabled = true;
+    narrationStopButton.disabled = true;
+    narrationButton.textContent = "Try narration again";
+    narrationPauseButton.textContent = "Pause";
+    narrationStatus.textContent = "Narration could not start. Try another browser voice or device.";
+  };
+  window.speechSynthesis.speak(utterance);
+}
+
+function toggleNarrationPause() {
+  if (!narrationSupported || !currentUtterance) return;
+  if (window.speechSynthesis.paused) {
+    window.speechSynthesis.resume();
+    narrationPauseButton.textContent = "Pause";
+    narrationStatus.textContent = "Narration playing.";
+  } else if (window.speechSynthesis.speaking) {
+    window.speechSynthesis.pause();
+    narrationPauseButton.textContent = "Resume";
+    narrationStatus.textContent = "Narration paused.";
+  }
+}
 
 function finishTyping(token = typingToken) {
   if (token !== typingToken || !currentStory) return;
@@ -132,6 +207,9 @@ function createStoryChoice(story, index) {
 function selectStory(storyId, updateUrl) {
   const story = stories.find((item) => item.id === storyId);
   if (!story) return;
+  if (currentUtterance || window.speechSynthesis?.speaking) {
+    stopNarration("Narration stopped because you selected another story.");
+  }
   currentStory = story;
   document.querySelector("[data-story-era]").textContent =
     `FIELD NOTE ${String(stories.indexOf(story) + 1).padStart(2, "0")} · ${story.era}`;
@@ -236,6 +314,26 @@ async function loadVoyagerEphemeris() {
 }
 
 async function start() {
+  if (!narrationSupported) {
+    narrationButton.disabled = true;
+    narrationPauseButton.disabled = true;
+    narrationStopButton.disabled = true;
+    narrationStatus.textContent =
+      "Audio narration is not supported by this browser. You can still read the story.";
+  }
+
+  narrationButton.addEventListener("click", () => {
+    if (currentUtterance && window.speechSynthesis.paused) {
+      window.speechSynthesis.resume();
+      narrationPauseButton.textContent = "Pause";
+      narrationStatus.textContent = "Narration playing.";
+      return;
+    }
+    startNarration();
+  });
+  narrationPauseButton.addEventListener("click", toggleNarrationPause);
+  narrationStopButton.addEventListener("click", () => stopNarration());
+
   typewriterButton.addEventListener("click", () => {
     if (typewriterButton.textContent === "Skip the typewriter") {
       finishTyping();
@@ -276,6 +374,10 @@ async function start() {
     storyProgress.textContent =
       error instanceof Error ? error.message : "Please reload to try again.";
     typewriterButton.disabled = true;
+    narrationButton.disabled = true;
+    narrationPauseButton.disabled = true;
+    narrationStopButton.disabled = true;
+    narrationStatus.textContent = "Narration is unavailable because the story archive did not load.";
   }
 }
 

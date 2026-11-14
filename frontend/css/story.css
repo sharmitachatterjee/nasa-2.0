@@ -340,6 +340,35 @@
   font-size: 0.73rem;
 }
 
+.story-audio-controls {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.55rem;
+  margin-top: 0.8rem;
+}
+
+.story-audio-controls .button {
+  min-height: 38px;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.78rem;
+}
+
+.story-audio-controls .button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  transform: none;
+}
+
+.story-audio-controls > span {
+  flex: 1 1 190px;
+  color: var(--muted);
+  font-size: 0.73rem;
+  line-height: 1.5;
+}
+
 .story-source {
   position: relative;
   z-index: 1;

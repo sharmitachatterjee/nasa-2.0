@@ -80,6 +80,20 @@
             </button>
             <span data-story-progress aria-live="polite">Preparing transmission…</span>
           </div>
+          <div class="story-audio-controls" role="group" aria-label="Story audio narration">
+            <button class="button button-primary" type="button" data-narrate>
+              Listen to story
+            </button>
+            <button class="button button-quiet" type="button" data-narration-pause disabled>
+              Pause
+            </button>
+            <button class="button button-quiet" type="button" data-narration-stop disabled>
+              Stop
+            </button>
+            <span data-narration-status role="status" aria-live="polite">
+              Narration uses your browser’s built-in voice.
+            </span>
+          </div>
           <footer class="story-source">
             <span>Grounded in mission records</span>
             <a data-story-source target="_blank" rel="noreferrer">Read the NASA mission history ↗</a>
