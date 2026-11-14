@@ -75,7 +75,10 @@ async function start() {
       document.querySelectorAll("[data-show-form]").forEach((button) => {
         button.addEventListener("click", () => setFormMode(button.dataset.showForm));
       });
-      setFormMode(window.location.hash === "#signup" ? "signup" : "login");
+      const initialMode =
+        document.body.dataset.authMode ||
+        (window.location.hash === "#signup" ? "signup" : "login");
+      setFormMode(initialMode);
 
       document.querySelector("[data-login-form]").addEventListener("submit", async (event) => {
         event.preventDefault();

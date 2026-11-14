@@ -2,7 +2,8 @@
 
 ## Supabase account pages
 
-The frontend includes an index page, login/sign-up page, and protected dashboard.
+The frontend includes an index page, dedicated login and sign-up pages, and a
+protected dashboard.
 It uses Supabase Auth for accounts and a `profiles` table for display names.
 
 ### Configure Supabase

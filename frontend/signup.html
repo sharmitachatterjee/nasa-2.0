@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Create an ABNF account to keep your space stories close."
+    />
+    <title>Create an account | ABNF</title>
+    <link rel="stylesheet" href="css/auth.css" />
+    <script type="module" src="js/auth.js"></script>
+  </head>
+  <body data-page="login" data-auth-mode="signup">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-header">
+      <a class="brand" href="/">ABNF<span>.</span></a>
+      <a class="button button-quiet" href="login.html">Log in</a>
+    </header>
+
+    <main class="auth-layout" id="main-content" tabindex="-1">
+      <section class="auth-card" aria-labelledby="auth-title">
+        <p class="eyebrow">YOUR SPACE, YOUR STORIES</p>
+        <h1 id="auth-title">Join the mission</h1>
+        <p class="muted" data-auth-intro>Create an account to keep your space stories close.</p>
+
+        <div class="auth-tabs" role="group" aria-label="Choose an account action">
+          <button class="tab-button" type="button" data-show-form="login" aria-pressed="false">
+            Log in
+          </button>
+          <button class="tab-button is-active" type="button" data-show-form="signup" aria-pressed="true">
+            Sign up
+          </button>
+        </div>
+
+        <form class="auth-form" data-login-form>
+          <label for="login-email">Email</label>
+          <input id="login-email" name="email" type="email" autocomplete="email" required />
+          <label for="login-password">Password</label>
+          <input
+            id="login-password"
+            name="password"
+            type="password"
+            autocomplete="current-password"
+            required
+          />
+          <button class="button button-primary button-full" type="submit">Log in</button>
+        </form>
+
+        <form class="auth-form" data-signup-form hidden>
+          <label for="signup-name">Name</label>
+          <input
+            id="signup-name"
+            name="displayName"
+            type="text"
+            autocomplete="name"
+            maxlength="80"
+            required
+          />
+          <label for="signup-email">Email</label>
+          <input id="signup-email" name="email" type="email" autocomplete="email" required />
+          <label for="signup-password">Password</label>
+          <input
+            id="signup-password"
+            name="password"
+            type="password"
+            autocomplete="new-password"
+            minlength="6"
+            required
+          />
+          <p class="field-hint">Use at least 6 characters.</p>
+          <button class="button button-primary button-full" type="submit">Create account</button>
+        </form>
+
+        <p class="status-message" role="status" aria-live="polite" data-status></p>
+      </section>
+    </main>
+  </body>
+</html>
