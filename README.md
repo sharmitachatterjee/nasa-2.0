@@ -39,3 +39,11 @@ Open `http://localhost:3000`. The backend serves the static frontend and a small
 `/api/config` endpoint that provides only the Supabase public URL and publishable
 key to the browser. The `.env` file is ignored by Git; do not put a Supabase
 service-role key in it for this frontend authentication flow.
+
+## Planetary map
+
+Open `http://localhost:3000/explore.html` to explore mission sites on the Moon
+and Mars. The map uses Leaflet and NASA Trek's public WMTS basemaps; those tile
+services do not require an API key. Site descriptions are fetched from
+`frontend/data/sites.json` when the map loads. An internet connection is needed
+for the Leaflet assets and NASA map tiles.

@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Explore historic and active mission sites on the Moon and Mars."
+    />
+    <title>Planetary map | ABNF</title>
+    <link rel="stylesheet" href="css/auth.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="css/map.css" />
+    <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script defer src="js/map.js"></script>
+  </head>
+  <body data-page="explore">
+    <header class="site-header">
+      <a class="brand" href="/">ABNF<span>.</span></a>
+      <nav class="header-actions" aria-label="Main navigation">
+        <a class="button button-quiet" href="/">Home</a>
+        <a class="button button-primary" href="explore.html" aria-current="page">Explore</a>
+      </nav>
+    </header>
+
+    <main class="map-page">
+      <section class="map-heading" aria-labelledby="map-title">
+        <p class="eyebrow">WORLDS, WALKED BY ROBOTS</p>
+        <h1 id="map-title">Every landing leaves a story.</h1>
+        <p class="hero-copy">
+          Explore mission sites across the Moon and Mars. Select a marker to see
+          what happened there.
+        </p>
+      </section>
+
+      <section class="map-workspace" aria-label="Planetary mission map">
+        <div class="map-main">
+          <div class="map-toolbar">
+            <div class="planet-switch" role="group" aria-label="Choose a world">
+              <button class="planet-button is-selected" type="button" data-body="moon" aria-pressed="true">
+                Moon
+              </button>
+              <button class="planet-button" type="button" data-body="mars" aria-pressed="false">
+                Mars
+              </button>
+            </div>
+            <p class="map-caption" data-map-caption>LOLA/WAC global mosaic · NASA Trek</p>
+          </div>
+          <div
+            id="planet-map"
+            class="planet-map"
+            role="region"
+            aria-label="Interactive map of the Moon"
+            aria-describedby="map-status"
+          ></div>
+          <p class="map-status" id="map-status" role="status" aria-live="polite">
+            Loading mission sites…
+          </p>
+          <div class="map-legend" aria-label="Marker status legend">
+            <span><i class="legend-dot status-active"></i>Operational</span>
+            <span><i class="legend-dot status-historic"></i>Historic</span>
+            <span><i class="legend-dot status-planned"></i>Planned</span>
+          </div>
+          <p class="map-attribution">
+            Basemaps: NASA/JPL-Caltech · <a href="https://trek.nasa.gov/" target="_blank" rel="noreferrer">NASA Trek</a>
+          </p>
+        </div>
+
+        <aside class="site-panel" aria-label="Mission site details">
+          <div class="site-panel-heading">
+            <div>
+              <p class="eyebrow">FIELD NOTES</p>
+              <h2 data-sites-heading>Moon sites</h2>
+            </div>
+            <span class="site-count" data-site-count>—</span>
+          </div>
+          <p class="site-panel-hint">Choose a site or map marker to open its story.</p>
+          <div class="site-list" data-site-list aria-label="Mission sites"></div>
+          <article class="site-detail" data-site-detail aria-live="polite" hidden>
+            <span class="site-status" data-detail-status></span>
+            <h3 data-detail-name></h3>
+            <p class="site-detail-location" data-detail-location></p>
+            <p data-detail-description></p>
+            <a data-detail-link target="_blank" rel="noreferrer">Read the mission story ↗</a>
+          </article>
+        </aside>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>ABNF · A home for forgotten space stories</span>
+      <span>Explore. Remember. Wonder.</span>
+    </footer>
+  </body>
+</html>

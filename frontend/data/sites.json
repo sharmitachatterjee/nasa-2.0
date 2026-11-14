@@ -1,0 +1,128 @@
+{
+  "moon": {
+    "label": "Moon",
+    "caption": "LOLA/WAC global mosaic · NASA Trek",
+    "tileUrl": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_WAC_Mosaic_Global_303ppd_v02/1.0.0/default/default028mm/{z}/{y}/{x}.jpg",
+    "maxNativeZoom": 8,
+    "sites": [
+      {
+        "id": "apollo-11",
+        "name": "Apollo 11",
+        "place": "Sea of Tranquility",
+        "coordinates": [0.6741, 23.4729],
+        "status": "historic",
+        "statusLabel": "Historic · 1969",
+        "description": "The first crewed landing on the Moon. Neil Armstrong and Buzz Aldrin explored the lunar surface while Michael Collins orbited above.",
+        "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1969-059A"
+      },
+      {
+        "id": "apollo-17",
+        "name": "Apollo 17",
+        "place": "Taurus–Littrow valley",
+        "coordinates": [20.1908, 30.7717],
+        "status": "historic",
+        "statusLabel": "Historic · 1972",
+        "description": "The final crewed Apollo landing brought a geologist to the Moon and returned a rich collection of samples from the valley.",
+        "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1972-096A"
+      },
+      {
+        "id": "chang-e-4",
+        "name": "Chang’e 4",
+        "place": "Von Kármán crater",
+        "coordinates": [-45.456, 177.588],
+        "status": "historic",
+        "statusLabel": "Historic · 2019",
+        "description": "The first successful soft landing on the Moon’s far side. The lander and Yutu-2 rover explored the South Pole–Aitken basin.",
+        "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2018-103A"
+      },
+      {
+        "id": "chandrayaan-3",
+        "name": "Chandrayaan-3",
+        "place": "Shiv Shakti Point",
+        "coordinates": [-69.373, 32.319],
+        "status": "historic",
+        "statusLabel": "Historic · 2023",
+        "description": "India’s Vikram lander and Pragyan rover reached the lunar south polar region and carried out a short surface science campaign.",
+        "url": "https://www.isro.gov.in/Chandrayaan3.html"
+      },
+      {
+        "id": "artemis-south-pole",
+        "name": "Artemis south polar region",
+        "place": "Approximate exploration area",
+        "coordinates": [-85.5, 15],
+        "status": "planned",
+        "statusLabel": "Planned · site TBD",
+        "description": "NASA’s Artemis campaign is preparing for future crewed exploration near the lunar south pole. This marker is illustrative; a landing site has not been selected.",
+        "url": "https://www.nasa.gov/humans-in-space/artemis/"
+      }
+    ]
+  },
+  "mars": {
+    "label": "Mars",
+    "caption": "Viking MDIM21 global color mosaic · NASA Trek",
+    "tileUrl": "https://trek.nasa.gov/tiles/Mars/EQ/Mars_Viking_MDIM21_ClrMosaic_global_232m/1.0.0/default/default028mm/{z}/{y}/{x}.jpg",
+    "maxNativeZoom": 7,
+    "sites": [
+      {
+        "id": "perseverance",
+        "name": "Perseverance",
+        "place": "Jezero crater",
+        "coordinates": [18.4447, 77.4508],
+        "status": "active",
+        "statusLabel": "Operational · landed 2021",
+        "description": "NASA’s rover is exploring an ancient lake-and-delta environment, collecting rock cores, and searching for signs of past microbial life.",
+        "url": "https://science.nasa.gov/mission/mars-2020-perseverance/"
+      },
+      {
+        "id": "curiosity",
+        "name": "Curiosity",
+        "place": "Gale crater",
+        "coordinates": [-4.5895, 137.4417],
+        "status": "active",
+        "statusLabel": "Operational · landed 2012",
+        "description": "Curiosity studies Mount Sharp and the chemistry of ancient Martian environments that could once have supported microbial life.",
+        "url": "https://science.nasa.gov/mission/msl-curiosity/"
+      },
+      {
+        "id": "viking-1",
+        "name": "Viking 1",
+        "place": "Chryse Planitia",
+        "coordinates": [22.48, -47.97],
+        "status": "historic",
+        "statusLabel": "Historic · 1976",
+        "description": "Viking 1 was the first spacecraft to return successful images from the surface of Mars and performed the first U.S. Mars landing.",
+        "url": "https://science.nasa.gov/mission/viking-1/"
+      },
+      {
+        "id": "viking-2",
+        "name": "Viking 2",
+        "place": "Utopia Planitia",
+        "coordinates": [47.64, 134.28],
+        "status": "historic",
+        "statusLabel": "Historic · 1976",
+        "description": "Viking 2 paired orbital reconnaissance with a lander that returned surface images and atmospheric and soil measurements.",
+        "url": "https://science.nasa.gov/mission/viking-2/"
+      },
+      {
+        "id": "insight",
+        "name": "InSight",
+        "place": "Elysium Planitia",
+        "coordinates": [4.5024, 135.6234],
+        "status": "historic",
+        "statusLabel": "Historic · 2018",
+        "description": "The stationary lander studied Mars’ interior, measured marsquakes, and helped reveal the planet’s crust, mantle, and core.",
+        "url": "https://science.nasa.gov/mission/insight/"
+      },
+      {
+        "id": "opportunity",
+        "name": "Opportunity",
+        "place": "Meridiani Planum",
+        "coordinates": [-1.9462, -5.526],
+        "status": "historic",
+        "statusLabel": "Historic · 2004",
+        "description": "Built for a 90-sol mission, Opportunity explored Meridiani Planum for nearly 15 years and found evidence of ancient water.",
+        "url": "https://science.nasa.gov/mission/mer-opportunity/"
+      }
+    ]
+  }
+}
