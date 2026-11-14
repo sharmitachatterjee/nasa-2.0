@@ -12,7 +12,14 @@
       "I traveled 45.16 kilometers—farther than anyone had asked of me. In June 2018, a planet-wide dust storm swallowed the Sun and my last signal reached Earth. People called across the silence for months. I had been sent to examine whether Mars could once have been wet. In the end, I left another answer behind: how far a little machine can go when every day is borrowed."
     ],
     "sourceLabel": "NASA · Mars Exploration Rovers",
-    "sourceUrl": "https://science.nasa.gov/mission/mars-exploration-rovers-spirit-and-opportunity/"
+    "sourceUrl": "https://science.nasa.gov/mission/mars-exploration-rovers-spirit-and-opportunity/",
+    "image": {
+      "url": "https://images-assets.nasa.gov/image/PIA21492/PIA21492~medium.jpg",
+      "alt": "Enhanced-color panorama of the Rocheport ridge on the western rim of Endeavour Crater, photographed by Opportunity.",
+      "title": "Mars Rover Opportunity Panorama of Rocheport Enhanced Color",
+      "credit": "NASA/JPL-Caltech/Cornell Univ./Arizona State Univ.",
+      "catalogUrl": "https://images-assets.nasa.gov/image/PIA21492/collection.json"
+    }
   },
   {
     "id": "spirit",
@@ -27,7 +34,14 @@
       "When the Martian winter came, sunlight grew scarce. My last communication reached Earth in March 2010. From my fixed place, the horizon did not get smaller; it became the subject. I had gone to Gusev to look for evidence of water. I found it—and learned that even a machine that stops moving can keep a mission moving forward."
     ],
     "sourceLabel": "NASA · Mars Exploration Rovers",
-    "sourceUrl": "https://science.nasa.gov/mission/mars-exploration-rovers-spirit-and-opportunity/"
+    "sourceUrl": "https://science.nasa.gov/mission/mars-exploration-rovers-spirit-and-opportunity/",
+    "image": {
+      "url": "https://images-assets.nasa.gov/image/PIA11996/PIA11996~orig.jpg",
+      "alt": "Spirit rover navigation-camera view of terrain near the Von Braun mound in the Columbia Hills.",
+      "title": "Von Braun Mound in Spirit Drive Direction",
+      "credit": "NASA/JPL-Caltech",
+      "catalogUrl": "https://images-assets.nasa.gov/image/PIA11996/collection.json"
+    }
   },
   {
     "id": "voyager-1",
@@ -42,7 +56,14 @@
       "In 2012, I crossed the heliopause into interstellar space. I did not cross a wall; I measured a change in the space around me, then sent the finding home through a radio signal taking longer and longer to arrive. I am still not at another star. I am simply farther from the only home I know, carrying its small message into the dark."
     ],
     "sourceLabel": "NASA · Voyager 1",
-    "sourceUrl": "https://science.nasa.gov/mission/voyager/voyager-1/"
+    "sourceUrl": "https://science.nasa.gov/mission/voyager/voyager-1/",
+    "image": {
+      "url": "https://images-assets.nasa.gov/image/PIA23645/PIA23645~medium.jpg",
+      "alt": "Pale Blue Dot Revisited, an updated version of the distant Earth image taken by Voyager 1.",
+      "title": "Pale Blue Dot Revisited",
+      "credit": "NASA/JPL-Caltech",
+      "catalogUrl": "https://images-assets.nasa.gov/image/PIA23645/collection.json"
+    }
   },
   {
     "id": "ingenuity",
@@ -57,7 +78,14 @@
       "I flew 72 times over nearly three years. On my final flight, a damaged rotor blade ended the journeys; I could no longer travel, though I remained in contact with my team. My mission had started as a proof of possibility. By the time I stopped, the proof had become a map for the aircraft that may follow."
     ],
     "sourceLabel": "NASA · Ingenuity Mars Helicopter",
-    "sourceUrl": "https://science.nasa.gov/mission/mars-2020-perseverance/ingenuity-mars-helicopter/"
+    "sourceUrl": "https://science.nasa.gov/mission/mars-2020-perseverance/ingenuity-mars-helicopter/",
+    "image": {
+      "url": "https://images-assets.nasa.gov/image/PIA24592/PIA24592~orig.jpg",
+      "alt": "Ingenuity's navigation camera looks down at the helicopter's shadow on the surface of Jezero Crater during its second flight.",
+      "title": "In-Flight Image From Ingenuity's Second Flight",
+      "credit": "NASA/JPL-Caltech",
+      "catalogUrl": "https://images-assets.nasa.gov/image/PIA24592/collection.json"
+    }
   },
   {
     "id": "apollo-lrv",
@@ -72,7 +100,14 @@
       "My work lasted only a few excursions, but those excursions changed the scale of lunar field science. I helped bring 170 pounds of Apollo 15 rock and soil back to Earth, along with samples collected on later missions. I have no memory of the view. The photographs, tracks, and stones are the record I left."
     ],
     "sourceLabel": "NASA History · Apollo 15 on the Moon",
-    "sourceUrl": "https://www.nasa.gov/history/50-years-ago-apollo-15-on-the-moon-at-hadley-apennine/"
+    "sourceUrl": "https://www.nasa.gov/history/50-years-ago-apollo-15-on-the-moon-at-hadley-apennine/",
+    "image": {
+      "url": "https://images-assets.nasa.gov/image/as15-86-11603/as15-86-11603~medium.jpg",
+      "alt": "Apollo 15 astronaut James Irwin working at the Lunar Roving Vehicle with Mount Hadley in the background.",
+      "title": "Astronaut James Irwin works at Lunar Roving Vehicle during Apollo 15 EVA",
+      "credit": "NASA/JSC",
+      "catalogUrl": "https://images-assets.nasa.gov/image/as15-86-11603/collection.json"
+    }
   },
   {
     "id": "cassini",
@@ -87,6 +122,13 @@
       "After more than a decade, my fuel was running low. My team chose not to risk an uncontrolled future at a moon that might hold conditions for life. Instead, in 2017, they sent me into Saturn's atmosphere and listened until my signal ended. I was not built to return. My final orbit was a deliberate act of care for the worlds I had spent my life observing."
     ],
     "sourceLabel": "NASA · Cassini Mission",
-    "sourceUrl": "https://science.nasa.gov/mission/cassini/"
+    "sourceUrl": "https://science.nasa.gov/mission/cassini/",
+    "image": {
+      "url": "https://images-assets.nasa.gov/image/PIA12785/PIA12785~orig.jpg",
+      "alt": "Bright clumps of ring material and a fan-like structure in Saturn's F ring, imaged by Cassini.",
+      "title": "F Ring Bright Core Clumps",
+      "credit": "NASA/JPL/Space Science Institute",
+      "catalogUrl": "https://images-assets.nasa.gov/image/PIA12785/collection.json"
+    }
   }
 ]

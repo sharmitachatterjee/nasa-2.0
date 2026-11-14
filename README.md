@@ -54,5 +54,6 @@ Open `http://localhost:3000/mission.html` for six first-person, typewritten
 retellings of Opportunity, Spirit, Voyager 1, Ingenuity, the Apollo Lunar
 Roving Vehicle, and Cassini. These are original creative interpretations of
 documented mission histories, not real spacecraft testimony. The stories are
-loaded from `frontend/data/stories.json` and link to NASA sources; no API key is
-required.
+loaded from `frontend/data/stories.json` and link to NASA sources. Mission
+images and their credits come from the public NASA Image and Video Library;
+that catalog does not require an API key.

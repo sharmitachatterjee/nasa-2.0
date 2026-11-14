@@ -5,11 +5,18 @@ const storyAccessible = document.querySelector("[data-story-accessible]");
 const storyCursor = document.querySelector("[data-story-cursor]");
 const storyProgress = document.querySelector("[data-story-progress]");
 const typewriterButton = document.querySelector("[data-typewriter]");
+const storyFigure = document.querySelector("[data-story-figure]");
+const storyImage = document.querySelector("[data-story-image]");
+const storyImageLink = document.querySelector("[data-story-image-link]");
+const storyImageCatalog = document.querySelector("[data-story-image-catalog]");
+const storyImageCredit = document.querySelector("[data-story-image-credit]");
+const storyImageFallback = document.querySelector("[data-story-image-fallback]");
 
 let stories = [];
 let currentStory;
 let typingTimer;
 let typingToken = 0;
+let imageToken = 0;
 let prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 function finishTyping(token = typingToken) {
@@ -90,8 +97,17 @@ function createStoryChoice(story, index) {
   const meta = document.createElement("span");
   meta.className = "story-choice-meta";
   meta.textContent = story.type;
+  const image = document.createElement("img");
+  image.className = "story-choice-image";
+  image.src = story.image.url;
+  image.alt = "";
+  image.loading = "lazy";
+  image.setAttribute("aria-hidden", "true");
+  image.addEventListener("error", () => {
+    image.hidden = true;
+  });
   copy.append(name, meta);
-  button.append(number, copy);
+  button.append(number, image, copy);
   button.addEventListener("click", () => selectStory(story.id, true));
   return button;
 }
@@ -110,6 +126,28 @@ function selectStory(storyId, updateUrl) {
   const source = document.querySelector("[data-story-source]");
   source.href = story.sourceUrl;
   source.textContent = `Read ${story.sourceLabel} ↗`;
+
+  storyFigure.hidden = false;
+  storyImage.hidden = false;
+  storyImageFallback.hidden = true;
+  storyImage.alt = story.image.alt;
+  imageToken += 1;
+  const selectedImageToken = imageToken;
+  storyImage.onload = () => {
+    if (selectedImageToken !== imageToken) return;
+    storyImage.hidden = false;
+    storyImageFallback.hidden = true;
+  };
+  storyImage.onerror = () => {
+    if (selectedImageToken !== imageToken) return;
+    storyImage.hidden = true;
+    storyImageFallback.hidden = false;
+  };
+  storyImageLink.href = story.image.catalogUrl;
+  storyImageCatalog.href = story.image.catalogUrl;
+  storyImageCatalog.textContent = story.image.title;
+  storyImageCredit.textContent = story.image.credit;
+  storyImage.src = story.image.url;
 
   storyList.querySelectorAll("[data-story-id]").forEach((button) => {
     const selected = button.dataset.storyId === story.id;
