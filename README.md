@@ -63,3 +63,12 @@ Horizons. The backend requests the public Horizons API, caches each result for
 five minutes, and sends the ephemeris to the browser through `/api/voyager`.
 No API key or `.env` setting is required. The displayed per-second counter
 extrapolates from Horizons' reported range rate between refreshed ephemerides.
+
+## Explorer quiz and collectible card
+
+Open `http://localhost:3000/quiz.html` to play the 10-question space mission
+quiz. Scores and personal bests are saved only in the current browser's local
+storage. Each result creates a downloadable PNG Explorer Card; the share link
+opens a card preview for friends. Callsigns are optional and should be
+space-themed rather than real names. Questions and NASA sources are in
+`frontend/data/quiz.json`; no external API key or `.env` setting is required.

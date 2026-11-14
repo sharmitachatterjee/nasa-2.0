@@ -1,0 +1,97 @@
+[
+  {
+    "category": "Mars explorers",
+    "question": "Which rover traveled more than 45 kilometers across Mars?",
+    "answers": ["Spirit", "Opportunity", "Curiosity", "Perseverance"],
+    "correctIndex": 1,
+    "explanation": "Opportunity traveled 45.16 kilometers before its mission ended in 2018. Perseverance later passed that distance record.",
+    "source": "https://science.nasa.gov/mission/mars-exploration-rovers-spirit-and-opportunity/"
+  },
+  {
+    "category": "A first flight",
+    "question": "What big first did NASA’s Ingenuity achieve on April 19, 2021?",
+    "answers": [
+      "The first powered, controlled flight on another planet",
+      "The first rover to drill into Mars",
+      "The first spacecraft to orbit Saturn",
+      "The first human landing on the Moon"
+    ],
+    "correctIndex": 0,
+    "explanation": "Ingenuity’s short hop proved that powered, controlled flight was possible in Mars’ very thin atmosphere. It went on to complete 72 flights.",
+    "source": "https://science.nasa.gov/mission/mars-2020-perseverance/ingenuity-mars-helicopter/"
+  },
+  {
+    "category": "Deep space",
+    "question": "Voyager 1 entered interstellar space in which year?",
+    "answers": ["1977", "1990", "2004", "2012"],
+    "correctIndex": 3,
+    "explanation": "Voyager 1 crossed the heliopause in 2012, entering the region beyond the Sun’s bubble of particles and magnetic fields.",
+    "source": "https://science.nasa.gov/mission/voyager/voyager-1/"
+  },
+  {
+    "category": "Moon wheels",
+    "question": "Which Apollo missions drove a Lunar Roving Vehicle on the Moon?",
+    "answers": ["Apollo 11, 12, and 14", "Apollo 13, 14, and 15", "Apollo 15, 16, and 17", "Apollo 16, 17, and 18"],
+    "correctIndex": 2,
+    "explanation": "The battery-powered Lunar Roving Vehicle was used on Apollo 15, 16, and 17 to help astronauts explore farther from their landing sites.",
+    "source": "https://www.nasa.gov/history/50-years-ago-apollo-15-on-the-moon-at-hadley-apennine/"
+  },
+  {
+    "category": "Saturn’s moons",
+    "question": "What was the name of the small spacecraft Cassini carried to Titan?",
+    "answers": ["Huygens", "Galileo", "Pioneer", "Juno"],
+    "correctIndex": 0,
+    "explanation": "The European Space Agency’s Huygens probe separated from Cassini and descended through Titan’s thick atmosphere in 2005.",
+    "source": "https://science.nasa.gov/mission/cassini/"
+  },
+  {
+    "category": "First footsteps",
+    "question": "Where did Apollo 11 astronauts make the first crewed Moon landing?",
+    "answers": ["Oceanus Procellarum", "Sea of Tranquility", "Taurus–Littrow", "Hadley–Apennine"],
+    "correctIndex": 1,
+    "explanation": "Apollo 11 touched down in the Sea of Tranquility on July 20, 1969.",
+    "source": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1969-059A"
+  },
+  {
+    "category": "Red planet geology",
+    "question": "What kind of evidence did Spirit and Opportunity find in Martian rocks?",
+    "answers": [
+      "Signs that liquid water existed long ago",
+      "Evidence of active volcanoes erupting",
+      "A frozen ocean at the equator",
+      "Trees preserved under the sand"
+    ],
+    "correctIndex": 0,
+    "explanation": "The twin rovers found minerals and rock textures that confirmed water had been present on Mars in the ancient past.",
+    "source": "https://science.nasa.gov/mission/mars-exploration-rovers-spirit-and-opportunity/"
+  },
+  {
+    "category": "Distant portrait",
+    "question": "What famous picture did Voyager 1 take of Earth in 1990?",
+    "answers": ["The Blue Marble", "Earthrise", "Pale Blue Dot", "A Sunrise on Mars"],
+    "correctIndex": 2,
+    "explanation": "From billions of kilometers away, Voyager 1 photographed Earth as a tiny point of light—the image known as the Pale Blue Dot.",
+    "source": "https://science.nasa.gov/mission/voyager/voyager-1/"
+  },
+  {
+    "category": "Mission teamwork",
+    "question": "Which rover carried Ingenuity to Mars?",
+    "answers": ["Curiosity", "Perseverance", "Opportunity", "Sojourner"],
+    "correctIndex": 1,
+    "explanation": "Ingenuity traveled to Mars attached beneath Perseverance, then flew ahead to scout terrain for the rover team.",
+    "source": "https://science.nasa.gov/mission/mars-2020-perseverance/ingenuity-mars-helicopter/"
+  },
+  {
+    "category": "A grand finale",
+    "question": "How did Cassini’s mission end in 2017?",
+    "answers": [
+      "It landed on Titan",
+      "It flew into Saturn’s atmosphere",
+      "It returned to Earth",
+      "It parked in orbit around Jupiter"
+    ],
+    "correctIndex": 1,
+    "explanation": "Cassini made a final series of close orbits and was guided into Saturn’s atmosphere, protecting the planet’s moons from accidental contamination.",
+    "source": "https://science.nasa.gov/mission/cassini/"
+  }
+]

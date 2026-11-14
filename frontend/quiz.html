@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Take the space mission quiz, earn your Explorer rank, and make a collectible card."
+    />
+    <title>Explorer Academy | ABNF</title>
+    <link rel="stylesheet" href="css/auth.css" />
+    <link rel="stylesheet" href="css/quiz.css" />
+    <script defer src="js/quiz.js"></script>
+  </head>
+  <body data-page="quiz">
+    <header class="site-header">
+      <a class="brand" href="/">ABNF<span>.</span></a>
+      <nav class="header-actions" aria-label="Main navigation">
+        <a class="button button-quiet" href="/">Home</a>
+        <a class="button button-quiet" href="explore.html">Map</a>
+        <a class="button button-quiet" href="mission.html">Stories</a>
+        <a class="button button-primary" href="quiz.html" aria-current="page">Quiz</a>
+      </nav>
+    </header>
+
+    <main class="quiz-page">
+      <section class="quiz-intro">
+        <p class="eyebrow">EXPLORER ACADEMY</p>
+        <h1>Ready for <span>launch?</span></h1>
+        <p class="hero-copy">
+          Ten questions. Real missions. One Explorer Card to take with you.
+        </p>
+      </section>
+
+      <section class="quiz-shell" aria-label="Space mission quiz">
+        <section class="quiz-welcome" data-quiz-welcome aria-labelledby="welcome-title">
+          <div class="welcome-orbit" aria-hidden="true">
+            <span>✦</span>
+          </div>
+          <p class="eyebrow">YOUR NEXT MISSION</p>
+          <h2 id="welcome-title">The universe is full of good questions.</h2>
+          <p>
+            Explore rovers, faraway worlds, and spacecraft that kept going.
+            Learn something new with every answer.
+          </p>
+          <label class="callsign-label" for="callsign">
+            Choose a space callsign <span>(optional)</span>
+          </label>
+          <input
+            id="callsign"
+            class="callsign-input"
+            type="text"
+            maxlength="20"
+            autocomplete="off"
+            placeholder="e.g. Comet Captain"
+          />
+          <p class="callsign-hint">Keep it space-themed—no real names or personal details.</p>
+          <p class="quiz-record" data-quiz-record hidden></p>
+          <button class="button button-primary button-large" type="button" data-start-quiz>
+            Start the quiz
+          </button>
+        </section>
+
+        <section class="quiz-play" data-quiz-play hidden aria-labelledby="question-text">
+          <div class="quiz-play-top">
+            <span class="quiz-category" data-category></span>
+            <span class="quiz-question-count" data-question-count></span>
+          </div>
+          <div
+            class="quiz-progress-track"
+            role="progressbar"
+            aria-label="Quiz progress"
+            aria-valuemin="0"
+            aria-valuemax="10"
+            aria-valuenow="0"
+            data-progress-track
+          >
+            <span data-progress-bar></span>
+          </div>
+          <h2 id="question-text" data-question-text tabindex="-1"></h2>
+          <div class="answer-list" data-answer-list role="group" aria-labelledby="question-text"></div>
+          <div class="answer-feedback" data-answer-feedback aria-live="polite" hidden>
+            <strong data-feedback-title></strong>
+            <p data-feedback-copy></p>
+            <a data-feedback-source target="_blank" rel="noreferrer">Mission source ↗</a>
+          </div>
+          <div class="quiz-play-footer">
+            <p data-score-preview>Correct answers: 0</p>
+            <button class="button button-primary" type="button" data-next-question hidden>
+              Next question
+            </button>
+          </div>
+        </section>
+
+        <section class="quiz-results" data-quiz-results hidden aria-labelledby="results-title">
+          <div class="result-heading">
+            <p class="eyebrow">MISSION COMPLETE</p>
+            <h2 id="results-title" data-results-title>Nice work, Explorer.</h2>
+            <p data-results-copy></p>
+          </div>
+          <div class="explorer-card-frame">
+            <canvas
+              class="explorer-card"
+              data-explorer-card
+              width="1200"
+              height="675"
+              role="img"
+              aria-label="Your Explorer Card will appear here."
+            ></canvas>
+          </div>
+          <div class="card-actions">
+            <button class="button button-primary" type="button" data-download-card>
+              Download your card
+            </button>
+            <button class="button button-quiet" type="button" data-share-card>
+              Share your card
+            </button>
+          </div>
+          <p class="share-status" data-share-status role="status" aria-live="polite"></p>
+          <div class="result-links">
+            <a class="button button-quiet" href="mission.html">Read a mission story</a>
+            <a class="button button-quiet" href="explore.html">Explore the map</a>
+            <button class="button button-quiet" type="button" data-play-again>Play again</button>
+          </div>
+        </section>
+
+        <section class="shared-card" data-shared-card hidden aria-labelledby="shared-title">
+          <p class="eyebrow">A TRANSMISSION FROM A FELLOW EXPLORER</p>
+          <h2 id="shared-title">Someone just earned a rank.</h2>
+          <div class="explorer-card-frame">
+            <canvas
+              class="explorer-card"
+              data-shared-explorer-card
+              width="1200"
+              height="675"
+              role="img"
+              aria-label="Shared Explorer Card."
+            ></canvas>
+          </div>
+          <a class="button button-primary button-large" href="quiz.html">Earn your own card</a>
+        </section>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>ABNF · A home for forgotten space stories</span>
+      <span>Explore. Remember. Wonder.</span>
+    </footer>
+  </body>
+</html>
