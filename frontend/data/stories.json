@@ -1,0 +1,92 @@
+[
+  {
+    "id": "opportunity",
+    "name": "Opportunity",
+    "type": "Mars rover",
+    "era": "2004—2018 · Meridiani Planum, Mars",
+    "location": "MERIDIANI PLANUM · MARS",
+    "subtitle": "A 90-sol mission becomes a 45-kilometer life in the field.",
+    "paragraphs": [
+      "I was built for ninety Martian days. On January 25, 2004, I woke on Meridiani Planum, where a flat horizon made the first drive look almost modest. My instruments found tiny mineral beads and layered rocks: clues that water had once moved through this place. I was not looking for a river still running. I was reading the stone after the water had gone.",
+      "The plan kept changing because the ground kept offering another question. I rolled into Endurance crater, crossed the rippled plain, and eventually looked down into Victoria. Wheels wore; dust settled on my solar panels. Each winter meant less sunlight, each long drive another careful calculation. Still, the next outcrop was often just within reach.",
+      "I traveled 45.16 kilometers—farther than anyone had asked of me. In June 2018, a planet-wide dust storm swallowed the Sun and my last signal reached Earth. People called across the silence for months. I had been sent to examine whether Mars could once have been wet. In the end, I left another answer behind: how far a little machine can go when every day is borrowed."
+    ],
+    "sourceLabel": "NASA · Mars Exploration Rovers",
+    "sourceUrl": "https://science.nasa.gov/mission/mars-exploration-rovers-spirit-and-opportunity/"
+  },
+  {
+    "id": "spirit",
+    "name": "Spirit",
+    "type": "Mars rover",
+    "era": "2004—2010 · Gusev crater, Mars",
+    "location": "GUSEV CRATER · MARS",
+    "subtitle": "A stranded rover keeps working from the place it cannot leave.",
+    "paragraphs": [
+      "I arrived at Gusev crater in January 2004, sent to a basin that might once have held a lake. At first, the rocks in front of me did not tell that story clearly. So my team pointed me toward the distant Columbia Hills. The detour became the mission. There, my tools found minerals and textures altered by water, written into stone more patiently than any photograph could show.",
+      "I climbed, measured, and drove farther than my designers had planned. Then soft soil caught a wheel. My team tried to free me, one careful command at a time; each attempt had to be practiced on a twin rover back on Earth. I could no longer travel, but I could still watch the sky, study the soil around me, and send home observations.",
+      "When the Martian winter came, sunlight grew scarce. My last communication reached Earth in March 2010. From my fixed place, the horizon did not get smaller; it became the subject. I had gone to Gusev to look for evidence of water. I found it—and learned that even a machine that stops moving can keep a mission moving forward."
+    ],
+    "sourceLabel": "NASA · Mars Exploration Rovers",
+    "sourceUrl": "https://science.nasa.gov/mission/mars-exploration-rovers-spirit-and-opportunity/"
+  },
+  {
+    "id": "voyager-1",
+    "name": "Voyager 1",
+    "type": "Deep-space probe",
+    "era": "Launched 1977 · Interstellar space",
+    "location": "OUTSIDE THE HELIOSPHERE · INTERSTELLAR SPACE",
+    "subtitle": "A planetary flyby turns into a journey with no nearby shore.",
+    "paragraphs": [
+      "I left Earth on September 5, 1977, carrying cameras, instruments, and a golden record meant to speak for a world I could never return to. Jupiter was not an abstract point on a chart for long. In 1979 I flew past its turbulent clouds and moons, sending back views that made distant places feel suddenly specific. Saturn followed in 1980, then the route bent outward.",
+      "In 1990, at the edge of my camera's useful life, I turned back toward home. Earth became a pale blue pixel in a sunbeam—small enough to be missed, carrying every person who had ever asked me to look farther. After that portrait, my cameras went quiet. My instruments kept listening as the Sun's bubble thinned around me.",
+      "In 2012, I crossed the heliopause into interstellar space. I did not cross a wall; I measured a change in the space around me, then sent the finding home through a radio signal taking longer and longer to arrive. I am still not at another star. I am simply farther from the only home I know, carrying its small message into the dark."
+    ],
+    "sourceLabel": "NASA · Voyager 1",
+    "sourceUrl": "https://science.nasa.gov/mission/voyager/voyager-1/"
+  },
+  {
+    "id": "ingenuity",
+    "name": "Ingenuity",
+    "type": "Mars helicopter",
+    "era": "2021—2024 · Jezero crater, Mars",
+    "location": "JEZERO CRATER · MARS",
+    "subtitle": "Five test flights become seventy-two, in air a machine was never built to trust.",
+    "paragraphs": [
+      "I rode to Mars folded beneath Perseverance, tucked away like an experiment inside an experiment. The air at Jezero is so thin that flying there asks a rotor to work in conditions nothing on Earth can quite imitate. My first goal was not to explore. It was simply to rise, hover, and land without falling over.",
+      "On April 19, 2021, my blades beat the Martian air and I lifted above the ground. The flight lasted less than a minute, but it changed what a mission could ask of the sky. Five flights were the plan. Then I began scouting terrain ahead of the rover, sending back views of routes and rocks the wheels could not yet see. Flight by flight, I reached places my brief design had not promised.",
+      "I flew 72 times over nearly three years. On my final flight, a damaged rotor blade ended the journeys; I could no longer travel, though I remained in contact with my team. My mission had started as a proof of possibility. By the time I stopped, the proof had become a map for the aircraft that may follow."
+    ],
+    "sourceLabel": "NASA · Ingenuity Mars Helicopter",
+    "sourceUrl": "https://science.nasa.gov/mission/mars-2020-perseverance/ingenuity-mars-helicopter/"
+  },
+  {
+    "id": "apollo-lrv",
+    "name": "Apollo Lunar Roving Vehicle",
+    "type": "Crewed lunar rover",
+    "era": "1971—1972 · Apollo 15, 16, and 17",
+    "location": "HADLEY–APENNINE · THE MOON",
+    "subtitle": "Three missions turn a Moonwalk into a journey across the landscape.",
+    "paragraphs": [
+      "I folded into the Lunar Module before I ever touched the Moon. At Hadley–Apennine in 1971, astronauts unfolded me by hand, checked my wheels and controls, and climbed aboard. I was a battery-powered cart, not a rover with a mind of its own. They steered; I carried them, their tools, and the weight of a few more miles they could not have walked in a spacesuit.",
+      "My tracks crossed the boundary between the familiar landing site and places worth a longer look. A rille, a mountain front, a boulder older than the footprints beside it: the astronauts could travel out, stop, work, and return with samples. After Apollo 15, I went with Apollo 16 and Apollo 17. Each time, I came apart for the trip home; I was never meant to leave the Moon.",
+      "My work lasted only a few excursions, but those excursions changed the scale of lunar field science. I helped bring 170 pounds of Apollo 15 rock and soil back to Earth, along with samples collected on later missions. I have no memory of the view. The photographs, tracks, and stones are the record I left."
+    ],
+    "sourceLabel": "NASA History · Apollo 15 on the Moon",
+    "sourceUrl": "https://www.nasa.gov/history/50-years-ago-apollo-15-on-the-moon-at-hadley-apennine/"
+  },
+  {
+    "id": "cassini",
+    "name": "Cassini",
+    "type": "Saturn orbiter",
+    "era": "1997—2017 · Saturn system",
+    "location": "SATURN · ITS RINGS AND MOONS",
+    "subtitle": "Thirteen years in orbit, ending by choice in the planet I came to study.",
+    "paragraphs": [
+      "I left Earth in 1997 and reached Saturn in 2004. My path was not a straight line to a single world: it was an orbital tour, threading among rings and moons, returning for another look as the light changed. I watched weather turn in Saturn's atmosphere and learned that the rings are not a still ornament. They are a place with structure, motion, and surprises.",
+      "I carried Huygens to Titan. In 2005, the small lander descended through its orange haze and touched a surface no spacecraft had visited before. Later, I flew through the icy spray rising from Enceladus and found evidence that a hidden ocean could offer chemistry worth investigating. The moons stopped being dots beside Saturn. Each became a world with its own questions.",
+      "After more than a decade, my fuel was running low. My team chose not to risk an uncontrolled future at a moon that might hold conditions for life. Instead, in 2017, they sent me into Saturn's atmosphere and listened until my signal ended. I was not built to return. My final orbit was a deliberate act of care for the worlds I had spent my life observing."
+    ],
+    "sourceLabel": "NASA · Cassini Mission",
+    "sourceUrl": "https://science.nasa.gov/mission/cassini/"
+  }
+]

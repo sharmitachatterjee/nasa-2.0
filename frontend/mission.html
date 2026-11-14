@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Hear six space missions retold in the first person, grounded in NASA history."
+    />
+    <title>Field notes from space | ABNF</title>
+    <link rel="stylesheet" href="css/auth.css" />
+    <link rel="stylesheet" href="css/story.css" />
+    <script defer src="js/story.js"></script>
+  </head>
+  <body data-page="stories">
+    <header class="site-header">
+      <a class="brand" href="/">ABNF<span>.</span></a>
+      <nav class="header-actions" aria-label="Main navigation">
+        <a class="button button-quiet" href="/">Home</a>
+        <a class="button button-quiet" href="explore.html">Explore map</a>
+        <a class="button button-primary" href="mission.html" aria-current="page">Stories</a>
+      </nav>
+    </header>
+
+    <main class="story-page">
+      <section class="story-intro" aria-labelledby="story-title">
+        <p class="eyebrow">TRANSMISSIONS FROM THE EDGE</p>
+        <h1 id="story-title">The machines that <span>kept going.</span></h1>
+        <p class="hero-copy">
+          Six journeys, retold from the point of view of the machines that made
+          them. Choose a voice; stay for the miles it traveled.
+        </p>
+        <p class="story-disclaimer">
+          These are imaginative, first-person retellings based on documented
+          mission events—not quotes, testimony, or thoughts recorded by the
+          spacecraft.
+        </p>
+      </section>
+
+      <section class="story-layout" aria-label="Mission story reader">
+        <nav class="story-index" aria-label="Choose a mission story">
+          <div class="story-index-heading">
+            <p class="eyebrow">THE ARCHIVE</p>
+            <span data-story-count>6 STORIES</span>
+          </div>
+          <div class="story-list" data-story-list></div>
+        </nav>
+
+        <article class="story-panel" aria-labelledby="story-mission-name">
+          <div class="story-panel-topline">
+            <span class="story-kicker" data-story-era>FIELD NOTE 01</span>
+            <span class="story-state"><i></i> HISTORICAL RETELLING</span>
+          </div>
+          <p class="story-location" data-story-location></p>
+          <h2 id="story-mission-name" data-story-name>Loading story…</h2>
+          <p class="story-subtitle" data-story-subtitle></p>
+
+          <div class="story-rule" aria-hidden="true"><span></span></div>
+          <div class="story-prose" data-story-prose aria-hidden="true"></div>
+          <div class="story-cursor" data-story-cursor aria-hidden="true"></div>
+          <div class="visually-hidden" data-story-accessible></div>
+
+          <div class="story-controls">
+            <button class="button button-quiet" type="button" data-typewriter>
+              Skip the typewriter
+            </button>
+            <span data-story-progress aria-live="polite">Preparing transmission…</span>
+          </div>
+          <footer class="story-source">
+            <span>Grounded in mission records</span>
+            <a data-story-source target="_blank" rel="noreferrer">Read the NASA mission history ↗</a>
+          </footer>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>ABNF · A home for forgotten space stories</span>
+      <span>Explore. Remember. Wonder.</span>
+    </footer>
+  </body>
+</html>

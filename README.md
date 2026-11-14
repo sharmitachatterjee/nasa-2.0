@@ -47,3 +47,12 @@ and Mars. The map uses Leaflet and NASA Trek's public WMTS basemaps; those tile
 services do not require an API key. Site descriptions are fetched from
 `frontend/data/sites.json` when the map loads. An internet connection is needed
 for the Leaflet assets and NASA map tiles.
+
+## Mission stories
+
+Open `http://localhost:3000/mission.html` for six first-person, typewritten
+retellings of Opportunity, Spirit, Voyager 1, Ingenuity, the Apollo Lunar
+Roving Vehicle, and Cassini. These are original creative interpretations of
+documented mission histories, not real spacecraft testimony. The stories are
+loaded from `frontend/data/stories.json` and link to NASA sources; no API key is
+required.
