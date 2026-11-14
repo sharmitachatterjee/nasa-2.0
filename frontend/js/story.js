@@ -11,6 +11,23 @@ const storyImageLink = document.querySelector("[data-story-image-link]");
 const storyImageCatalog = document.querySelector("[data-story-image-catalog]");
 const storyImageCredit = document.querySelector("[data-story-image-credit]");
 const storyImageFallback = document.querySelector("[data-story-image-fallback]");
+const voyagerMiles = document.querySelector("[data-voyager-miles]");
+const voyagerKilometers = document.querySelector("[data-voyager-kilometers]");
+const voyagerAu = document.querySelector("[data-voyager-au]");
+const voyagerLightTime = document.querySelector("[data-voyager-light-time]");
+const voyagerStatus = document.querySelector("[data-voyager-status]");
+const voyagerIndicator = document.querySelector(".voyager-live");
+
+const MILES_PER_KILOMETER = 0.621371;
+const SPEED_OF_LIGHT_KM_S = 299792.458;
+const EPHEMERIS_REFRESH_MS = 5 * 60 * 1000;
+const distanceFormatter = new Intl.NumberFormat(undefined, { maximumFractionDigits: 0 });
+const auFormatter = new Intl.NumberFormat(undefined, {
+  minimumFractionDigits: 3,
+  maximumFractionDigits: 3,
+});
+let voyagerEphemeris;
+let voyagerReceivedAt;
 
 let stories = [];
 let currentStory;
@@ -161,6 +178,63 @@ function selectStory(storyId, updateUrl) {
   beginTyping();
 }
 
+function updateVoyagerCounter() {
+  if (!voyagerEphemeris) return;
+  const elapsedSeconds = Math.max(0, (Date.now() - voyagerReceivedAt) / 1000);
+  const distanceKm =
+    voyagerEphemeris.distanceKm + voyagerEphemeris.rangeRateKmS * elapsedSeconds;
+  const distanceAu = distanceKm / 149597870.7;
+  const distanceMiles = distanceKm * MILES_PER_KILOMETER;
+  const lightTimeHours = distanceKm / SPEED_OF_LIGHT_KM_S / 3600;
+
+  voyagerMiles.textContent = distanceFormatter.format(distanceMiles);
+  voyagerKilometers.textContent = `${distanceFormatter.format(distanceKm)} km`;
+  voyagerAu.textContent = `${auFormatter.format(distanceAu)} AU`;
+  voyagerLightTime.textContent = `${lightTimeHours.toFixed(1)} hours`;
+}
+
+async function loadVoyagerEphemeris() {
+  try {
+    const response = await fetch("/api/voyager", { cache: "no-store" });
+    const data = await response.json();
+    if (!response.ok) {
+      throw new Error(data.error || "Could not load Voyager's latest ephemeris.");
+    }
+
+    const ephemerisTime = Date.parse(data.ephemerisAt);
+    if (
+      !Number.isFinite(ephemerisTime) ||
+      !Number.isFinite(data.distanceKm) ||
+      !Number.isFinite(data.distanceAu) ||
+      !Number.isFinite(data.rangeRateKmS)
+    ) {
+      throw new Error("JPL Horizons returned incomplete Voyager telemetry.");
+    }
+
+    voyagerEphemeris = data;
+    voyagerReceivedAt = ephemerisTime;
+    updateVoyagerCounter();
+    voyagerStatus.classList.remove("is-error");
+    voyagerIndicator.classList.remove("is-stale");
+    const ephemerisLabel = new Date(data.ephemerisAt).toLocaleString(undefined, {
+      timeZone: "UTC",
+      dateStyle: "medium",
+      timeStyle: "short",
+    });
+    voyagerStatus.textContent =
+      `JPL Horizons epoch: ${ephemerisLabel} UTC · estimate updates every second.`;
+  } catch (error) {
+    console.error("Voyager ephemeris could not be loaded:", error);
+    voyagerIndicator.classList.add("is-stale");
+    voyagerStatus.classList.add("is-error");
+    voyagerStatus.textContent = voyagerEphemeris
+      ? "Could not refresh Horizons data; showing the latest available estimate."
+      : error instanceof Error
+        ? error.message
+        : "Voyager's distance is temporarily unavailable.";
+  }
+}
+
 async function start() {
   typewriterButton.addEventListener("click", () => {
     if (typewriterButton.textContent === "Skip the typewriter") {
@@ -173,6 +247,10 @@ async function start() {
   prefersReducedMotion.addEventListener("change", (event) => {
     if (event.matches && currentStory) finishTyping();
   });
+
+  loadVoyagerEphemeris();
+  window.setInterval(updateVoyagerCounter, 1000);
+  window.setInterval(loadVoyagerEphemeris, EPHEMERIS_REFRESH_MS);
 
   try {
     const response = await fetch("data/stories.json");

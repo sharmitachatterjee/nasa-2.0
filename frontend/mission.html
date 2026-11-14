@@ -87,6 +87,51 @@
       </section>
     </main>
 
+    <section class="voyager-card" aria-labelledby="voyager-heading" data-voyager-card>
+      <div class="voyager-heading">
+        <div>
+          <p class="eyebrow">A SIGNAL FROM INTERSTELLAR SPACE</p>
+          <h2 id="voyager-heading">Where is Voyager 1 now?</h2>
+        </div>
+        <span class="voyager-live"><i data-voyager-indicator></i> LIVE EPHEMERIS</span>
+      </div>
+      <p class="voyager-lead">
+        More than forty-nine years from launch, and still moving away from home.
+      </p>
+      <div class="voyager-distance-block">
+        <span class="voyager-distance-label">DISTANCE FROM EARTH</span>
+        <p class="voyager-distance" data-voyager-miles>Connecting to JPL Horizons…</p>
+        <span class="voyager-distance-unit">miles</span>
+      </div>
+      <div class="voyager-stats" aria-label="Voyager telemetry">
+        <div>
+          <span class="voyager-stat-label">Kilometers</span>
+          <strong data-voyager-kilometers>—</strong>
+        </div>
+        <div>
+          <span class="voyager-stat-label">Astronomical units</span>
+          <strong data-voyager-au>—</strong>
+        </div>
+        <div>
+          <span class="voyager-stat-label">One-way light time</span>
+          <strong data-voyager-light-time>—</strong>
+        </div>
+      </div>
+      <div class="voyager-footer">
+        <p data-voyager-status role="status" aria-live="polite">
+          Requesting the latest ephemeris…
+        </p>
+        <a href="https://ssd.jpl.nasa.gov/horizons/" target="_blank" rel="noreferrer">
+          Source: NASA/JPL Horizons ↗
+        </a>
+      </div>
+      <p class="voyager-method">
+        Horizons reports Voyager’s apparent Earth range and range rate. The
+        counter estimates the changing distance between refreshes and requests
+        a fresh ephemeris every five minutes.
+      </p>
+    </section>
+
     <footer class="site-footer">
       <span>ABNF · A home for forgotten space stories</span>
       <span>Explore. Remember. Wonder.</span>

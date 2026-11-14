@@ -1,5 +1,6 @@
 const path = require("node:path");
 const express = require("express");
+const { getVoyagerEphemeris } = require("./services/voyager");
 require("dotenv").config({ path: path.join(__dirname, ".env") });
 
 const app = express();
@@ -37,6 +38,19 @@ app.get("/api/config", (req, res) => {
 
   res.set("Cache-Control", "no-store");
   return res.json({ supabaseUrl, supabaseAnonKey });
+});
+
+app.get("/api/voyager", async (req, res) => {
+  try {
+    const ephemeris = await getVoyagerEphemeris();
+    res.set("Cache-Control", "no-store");
+    return res.json(ephemeris);
+  } catch (error) {
+    console.error("Could not retrieve Voyager ephemeris:", error);
+    return res.status(502).json({
+      error: "JPL Horizons could not provide Voyager 1's current distance. Try again shortly.",
+    });
+  }
 });
 
 app.use(express.static(frontendPath));
